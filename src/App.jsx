@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import CountDown from './components/timer';
 
@@ -11,4 +10,4 @@ function App() {
   );
 }
 
-export default App;
+export default App
