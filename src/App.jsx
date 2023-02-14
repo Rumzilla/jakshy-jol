@@ -1,13 +1,13 @@
 import './App.css';
 import CountDown from './components/timer';
+import DrivingTestModule from "./modules/driving-test/TestingWindow";
 
 function App() {
   return (
     <div className="App">
       <CountDown />
-      <div>rumzilla timer</div>
-      <div>Alina test</div>
-      
+      <DrivingTestModule />
+
     </div>
   );
 }
