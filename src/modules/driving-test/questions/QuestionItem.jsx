@@ -65,7 +65,6 @@ const QuestionItem = (props) => {
       </div>
 
 
-      Кнопка к следующему вопросу
 
       <div className="button-list">
         <div onClick={getReset}>
