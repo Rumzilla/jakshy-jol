@@ -11,7 +11,9 @@ function App() {
       <CountDown />
       <DrivingTestModule />
       <HomePage />
+
     </div>
+
   );
 }
 
