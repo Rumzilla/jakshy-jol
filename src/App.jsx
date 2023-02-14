@@ -5,6 +5,7 @@ function App() {
   return (
     <div className="App">
       <CountDown />
+      <div>rumzilla timer</div>
       
     </div>
   );
