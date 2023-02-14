@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <CountDown />
       <div>rumzilla timer</div>
-      <div>123</div>
+      <div>Alina test</div>
       
     </div>
   );
