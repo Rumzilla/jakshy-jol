@@ -17,6 +17,7 @@ const DrivingTestModule = () => {
     setAnswer(0)
     setFlag(0)
     setResult(result + answer)
+
   }
 
   const getResult = () => {
@@ -45,6 +46,7 @@ const DrivingTestModule = () => {
   }
 
 
+
   const renderQuestions = () => {
     return questionStore.questions.map((elem, idx) => {
       if (activeQuestionNumber !== elem.questionNumber) {
@@ -62,6 +64,7 @@ const DrivingTestModule = () => {
     })
   }
 
+
   return (
     <div>
       <h1>Пробный тест ПДД</h1>
@@ -72,6 +75,7 @@ const DrivingTestModule = () => {
           totalQuestionsNumber={questionStore.questions.length}
         />
       ) : renderQuestions()}
+
     </div>
   );
 };

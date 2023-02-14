@@ -23,7 +23,8 @@ export const questionStore = {
           isAnswerCorrect: false,
           text: 'По любой из указанных',
         }
-      ]
+      ],
+      status: 'Следующий вопрос'
     },
 
     {
@@ -48,7 +49,8 @@ export const questionStore = {
           isAnswerCorrect: false,
           text: 'Не менее 50 км/ч и не более 90 км/ч',
         }
-      ]
+      ],
+      status: 'Следующий вопрос'
     },
 
     {
@@ -73,7 +75,8 @@ export const questionStore = {
           isAnswerCorrect: false,
           text: 'По любой из указанных',
         }
-      ]
+      ],
+      status: 'Следующий вопрос'
     },
 
     {
@@ -98,7 +101,8 @@ export const questionStore = {
           isAnswerCorrect: false,
           text: 'По любой из указанных',
         }
-      ]
+      ],
+      status: 'Следующий вопрос'
     },
 
     {
@@ -123,7 +127,8 @@ export const questionStore = {
           isAnswerCorrect: false,
           text: 'По любой из указанных',
         }
-      ]
+      ],
+      status: 'Завершить тест'
     }
   ]
 }

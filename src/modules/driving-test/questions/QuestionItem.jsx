@@ -1,4 +1,5 @@
 import React from "react";
+import './style.css'
 
 const QuestionItem = (props) => {
   const {
@@ -8,14 +9,6 @@ const QuestionItem = (props) => {
     totalQuestionsNumber,
   } = props
 
-  function baton()  {
-    if ( data.questionNumber.length === totalQuestionsNumber) {
-      return ("End")
-    } else {
-      return ("Next")
-    }
-    console.log( data.questionNumber.length)
-  }
 
   return (
     <div className="test-wrapper">
@@ -65,10 +58,9 @@ const QuestionItem = (props) => {
       </div>
 
 
-
       <div className="button-list">
-        <div onClick={getReset}>
-          <input type="button" value={baton}/>
+        <div>
+          <input type="button" value={data.status} onClick={getReset}/>
         </div>
       </div>
     </div>
