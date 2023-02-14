@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {questionStore} from "../../MOCK_DATA/QuestionStore";
 import QuestionItem from "./questions/QuestionItem";
-import Result from "./result/result";
+import ResultPage from "../../pages/ResultPage/ResultPage";
 
 const DrivingTestModule = () => {
 
@@ -17,6 +17,7 @@ const DrivingTestModule = () => {
     setAnswer(0)
     setFlag(0)
     setResult(result + answer)
+
   }
 
   const getResult = () => {
@@ -45,6 +46,7 @@ const DrivingTestModule = () => {
   }
 
 
+
   const renderQuestions = () => {
     return questionStore.questions.map((elem, idx) => {
       if (activeQuestionNumber !== elem.questionNumber) {
@@ -62,16 +64,18 @@ const DrivingTestModule = () => {
     })
   }
 
+
   return (
     <div>
       <h1>Пробный тест ПДД</h1>
       {isShowResult ? (
-        <Result
+        <ResultPage
           getResult={getResult}
           result={result}
           totalQuestionsNumber={questionStore.questions.length}
         />
       ) : renderQuestions()}
+
     </div>
   );
 };

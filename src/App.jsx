@@ -1,18 +1,25 @@
-import './App.css';
-import CountDown from './components/timer';
-import DrivingTestModule from "./modules/driving-test/TestingWindow";
+import {BrowserRouter, Route} from "react-router-dom";
 import HomePage from './pages/HomePage/HomePage';
-
+import TestPage from "./pages/TestPage/TestPage";
+import ResultPage from "./pages/ResultPage/ResultPage";
+import './App.css';
 import './reset/reset.css'
 
 function App() {
   return (
-    <div className="App">
-      <CountDown />
-      <DrivingTestModule />
-      <HomePage />
-
-    </div>
+      <BrowserRouter>
+        <div className="App">
+          <Route exact path="/">
+            <HomePage />
+            </Route>
+          <Route exact path="/test">
+             <TestPage />
+          </Route>
+          <Route exact path="/result">
+              <ResultPage />
+          </Route>
+        </div>
+      </BrowserRouter>
 
   );
 }
