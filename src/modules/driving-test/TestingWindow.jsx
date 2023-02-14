@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {questionStore} from "../../MOCK_DATA/QuestionStore";
 import QuestionItem from "./questions/QuestionItem";
-import Result from "./result/result";
+import ResultPage from "../../pages/ResultPage/ResultPage";
 
 const DrivingTestModule = () => {
 
@@ -69,7 +69,7 @@ const DrivingTestModule = () => {
     <div>
       <h1>Пробный тест ПДД</h1>
       {isShowResult ? (
-        <Result
+        <ResultPage
           getResult={getResult}
           result={result}
           totalQuestionsNumber={questionStore.questions.length}
