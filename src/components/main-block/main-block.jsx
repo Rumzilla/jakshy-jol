@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import Header from "../header/header";
 
 import "./main-block.css";
@@ -22,10 +23,10 @@ const MainBlock = () => {
                         Получите полную консультацию по звонку!
                     </p>
                     <div className="main-block-contact">
-                        <a href="#" className="main-block-whatsapp">
+                        <Link to='/' className="main-block-whatsapp">
                             <span className="main-block-whatsapp-icon"></span>
                             WhatsApp
-                        </a>
+                        </Link>
                         <div className="main-block-phone">
                             <span className="main-block-phone-icon"></span>
                                 0552 209 809
@@ -41,10 +42,10 @@ const MainBlock = () => {
                             ПН-ВС; 09:00-18:00
                             </div>
                         </div>
-                        <div className="main-block-gmail">
+                        <Link to='/' className="main-block-gmail">
                             <span className="main-block-gmail-icon"></span>
                             ruslanjakshylykov@gmail.com
-                        </div>
+                        </Link>
 
                     </div>
                     
