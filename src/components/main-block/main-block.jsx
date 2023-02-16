@@ -5,11 +5,13 @@ import "./main-block.css";
 
 const MainBlock = () => {
     return (
-        <div>
+        <div className="main-block-background">
             <Header />
             <div className="container">
                 <div className="main-block">
-                    <div className="main-block-beige">
+                    <div className="main-block-car-bg">
+                        <div className="main-block-car-img"></div>
+                    </div>
                     <h2 className="main-block-header">
                         Персональные уроки по вождению
                     </h2>
@@ -19,22 +21,37 @@ const MainBlock = () => {
                     <p className="main-block-consultation">
                         Получите полную консультацию по звонку!
                     </p>
-                    <a href="#" className="main-block-whatsapp">
-                        <span className="main-block-whatsapp-icon"></span>
-                        WhatsApp
-                    </a>
-                    <div className="main-block-phone">
-                        <span className="main-block-phone-icon"></span>
-                            0552 209 809
+                    <div className="main-block-contact">
+                        <a href="#" className="main-block-whatsapp">
+                            <span className="main-block-whatsapp-icon"></span>
+                            WhatsApp
+                        </a>
+                        <div className="main-block-phone">
+                            <span className="main-block-phone-icon"></span>
+                                0552 209 809
                         </div>
                     </div>
-                    <div className="main-block-green"></div>
-                </div>
+                    <div className="main-block-footer">
+                        <div className="main-block-work-time">
+                            <div className="main-block-work-time-graph">
+                                <span className="main-block-work-time-graph-icon"></span>
+                                График работы 
+                            </div>
+                            <div className="main-block-work-time-text">
+                            ПН-ВС; 09:00-18:00
+                            </div>
+                        </div>
+                        <div className="main-block-gmail">
+                            <span className="main-block-gmail-icon"></span>
+                            ruslanjakshylykov@gmail.com
+                        </div>
+
+                    </div>
+                    
+                </div>  
             </div>
-
-        </div>
             
-
+        </div>
     )
 }
 

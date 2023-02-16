@@ -57,6 +57,7 @@
     background: url(../../icons/language.svg) center center/cover no-repeat;
     width: 20px;
     height: 20px;
+    margin-right: 21px;
 }
 
 .social-header-block .admin {
