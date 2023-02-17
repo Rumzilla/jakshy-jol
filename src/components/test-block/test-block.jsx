@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import "./test-block.css"
 
@@ -34,9 +35,9 @@ const TestBlock = () => {
                         <p className="test-card-task-text">
                         Проверьте свои знания ПДД вместе с нами. Вам дается 25 минут чтобы ответить на 20 вопросов с иллюстрациями и вариантами ответов, узнайте уровень ваших знаний ПДД 
                         </p>
-                        <a className="pass-the-test">
+                        <Link to='/test' className="pass-the-test">
                         Пройти Тест!
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>

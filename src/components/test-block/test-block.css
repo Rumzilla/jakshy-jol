@@ -49,6 +49,18 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    -o-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.test-card-practice:hover {
+    -o-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background: rgba(0, 0, 0, 0.234);
 }
 
 .test-card-practice-img {
@@ -89,6 +101,18 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    -o-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.test-card-task:hover {
+    -o-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background: rgba(0, 0, 0, 0.234);
 }
 
 .test-card-task-header {
@@ -121,6 +145,10 @@
     border-radius: 50px;
     border: none;
     width: 160px;
+}
+
+.pass-the-test:hover {
+    background: rgba(0, 0, 0, 0.205);
 }
 
 .test-card-task-img {
