@@ -8,7 +8,7 @@ import './reset/reset.css'
 function App() {
   return (
       <BrowserRouter>
-        <Switch>
+        <Switch> 
           <Route exact path="/" component={HomePage} />
           <Route exact path="/test" component={TestPage} />
           <Route exact path="/result" component={ResultPage} />
