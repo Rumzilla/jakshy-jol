@@ -95,6 +95,8 @@
 }
 
 .test-card-task {
+    position: relative;
+    z-index: 2;
     margin-top: 100px;
     background: rgba(0, 0, 0, 0.1);
     border-radius: 50px;
@@ -143,16 +145,40 @@
     color: #000000;
     background: #FFFFFF;
     border-radius: 50px;
-    border: none;
+    border: 1px solid #478E64;
     width: 160px;
+    -o-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .pass-the-test:hover {
-    background: rgba(0, 0, 0, 0.205);
+    border: 1px solid #000;
+    background: #1a8a49;
+    -o-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .test-card-task-img {
     background: url(../../img/test-img.png) center center/cover no-repeat;
     width: 225px;
     height: 160px;
+}
+
+.road {
+    position: relative;
+    z-index: 0;
+
+}
+
+.road-img {
+    background: url(../../img/road.png) center center/cover no-repeat;
+    width: 626px;
+    height: 576px;
+    position: absolute;
+    top: -475px;
+    right: -110px;
 }

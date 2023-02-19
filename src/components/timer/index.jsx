@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./timer.css";
+
 const CountDown = ({minutes = 0, seconds = 5 }) => {
   const [paused, setPaused] = React.useState(false);
   const [over, setOver] = React.useState(false);
@@ -31,14 +33,18 @@ const CountDown = ({minutes = 0, seconds = 5 }) => {
   });
 
   return (
-    <div>
-      <p>{`
-      ${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}
-      `}
-      </p>
-      <div>{over ? "Время вышло" : ''}</div>
+    <div className="timer-block">
+      <div className="container">
+        <div className="timer-block-wrap">
+          <p className="timer-block-time">{`
+            ${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}
+            `}
+            </p>
+            <div className="timer-block-over">{over ? "Время вышло" : ''}</div>
+          </div>
+      </div>
     </div>
   );
 };
 
-export default CountDown
+export default CountDown;

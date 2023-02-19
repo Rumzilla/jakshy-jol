@@ -77,6 +77,10 @@
     line-height: 25px;
     color: #F1F1F1;
     padding: 10px 30px 9px 30px;
+    -o-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .main-block-whatsapp-icon {
@@ -84,6 +88,30 @@
     width: 20px;
     height: 20px;
     margin-right: 10px;
+    -o-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.main-block-whatsapp:hover .main-block-whatsapp-icon {
+    background: url(../../icons/whatsapp-black.svg) center center/cover no-repeat;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    -o-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.main-block-whatsapp:hover {
+    color: #000;
+    background: white;
+    -o-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .main-block-phone {
@@ -146,6 +174,19 @@
     font-size: 15px;
     line-height: 18px;
     color: #F1F1F1;
+    border-bottom: 1px solid rgba(0, 0, 0, 0);
+    -o-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.main-block-gmail:hover {
+    border-bottom: 1px solid white ;
+    -o-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .main-block-gmail-icon {
