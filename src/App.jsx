@@ -11,12 +11,12 @@ function App() {
         <div className="App">
           <Route exact path="/">
             <HomePage />
-            </Route>
+          </Route>
           <Route exact path="/test">
-             <TestPage />
+            <TestPage />
           </Route>
           <Route exact path="/result">
-              <ResultPage />
+            <ResultPage />
           </Route>
         </div>
       </BrowserRouter>
