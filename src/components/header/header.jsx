@@ -15,7 +15,12 @@ const Header = () => {
                     <a href="/" className="instagram-item"></a>
                     <a href="/" className="whatsapp-item"></a>
                     <a href="/" className="telegram-item"></a>
-                    <Link to='/' className="lang"></Link>
+                    <Link to="/" className="lang">
+                        <div className="lang-menu">
+                            <Link to="/" className="lang-menu-item">Кыргызский</Link>
+                            <Link to="/" className="lang-menu-item">Русский</Link>
+                        </div>
+                    </Link>
                     <Link to='/' className="admin"></Link>
                 </div>              
             </div>
