@@ -1,9 +1,16 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-
 import "./header.css"
 
 const Header = () => {
+
+    const {t, i18n} = useTranslation();
+
+    const changeLanguage = (language) => {
+        i18n.changeLanguage(language);
+    }
+
     return (
         <div className="container">
             <div className="header-block">
@@ -21,6 +28,7 @@ const Header = () => {
                             <Link to="/" className="lang-menu-item">Русский</Link>
                         </div>
                     </Link>
+
                     <Link to='/' className="admin"></Link>
                 </div>              
             </div>

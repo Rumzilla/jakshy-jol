@@ -14,7 +14,7 @@ const CountDown = ({minutes = 0, seconds = 5 }) => {
       setOver(true);
     } else if (m === 0 && s === 0) {
       setTime([59, 59]);
-    } else if (s == 0) {
+    } else if (s === 0) {
       setTime([m - 1, 59]);
     } else {
       setTime([m, s - 1]);
