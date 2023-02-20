@@ -1,69 +1,40 @@
 import React from "react";
 import './style.css'
+import AnswerItem from "../answerList/AnswerItem";
 
 const QuestionItem = (props) => {
   const {
     data,
-    getAnswer,
     getReset,
     totalQuestionsNumber,
   } = props
 
 
   return (
-    <div className="test-wrapper">
-      <div>Вопрос {data.questionNumber} из {totalQuestionsNumber}</div>
-      <h2 className="question-title">
-        <span>{data.questionNumber}</span>
-        {data.question}
-      </h2>
-      <div className="question-image">
-        <img src={data.image} alt="image-test"/>
-      </div>
-      <div id="question-inputs">
-        <input
-          onClick={(e) => getAnswer(e)}
-          type="radio"
-          className="question-input"
-          id="q1"
-          name="q1"
-          value={data.answers[0].isAnswerCorrect}
-        />
-        <label htmlFor="q1">{data.answers[0].text}</label>
-      </div>
-      <div id="question-inputs">
-        <input
-          onClick={(e) => getAnswer(e)}
-          type="radio"
-          className="question-input"
-          id="q2"
-          name="q1"
-          value={data.answers[1].isAnswerCorrect}
-        />
-        <label htmlFor="q2">{data.answers[1].text}</label>
-      </div>
-      <div id="question-inputs">
-        <input
-          onClick={(e) => getAnswer(e)}
-          type="radio"
-          className="question-input"
-          id="q3"
-          name="q1"
-          value={data.answers[2].isAnswerCorrect}
-        />
-        <label htmlFor="q3">{data.answers[2].text}</label>
-      </div>
-      <div id="answer-list">
-        {data.description}
-      </div>
+      <div className="question-block">
+        <div className="container">
+          <div className="question-block-header">Вопрос {data.id} из {totalQuestionsNumber}</div>
+          <h2 className="question-block-title">
+            <span className="question-block-number">{data.id}.</span>
+            {data.text}
+          </h2>
+          <div className="question-block-image">
+            <img src={data.image} alt="image-test"/>
+          </div>
+
+          <AnswerItem />
 
 
-      <div className="button-list">
-        <div>
-          <input type="button" value={data.status} onClick={getReset}/>
+
+          <div id="answer-list">
+            Разъяснение ответа
+          </div>
+          <div className="question-line"></div>
+          <div className="question-btn-wrap">
+            <input className="question-btn-next" type="button" value='Отправить ответ' onClick={getReset}/>
+          </div>
         </div>
       </div>
-    </div>
   )
 }
 

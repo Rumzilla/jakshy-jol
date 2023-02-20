@@ -1,6 +1,5 @@
 import React from "react";
-
-
+import { Link } from "react-router-dom";
 import "./footer.css"
 
 const Footer = () => {
@@ -13,7 +12,7 @@ const Footer = () => {
                         <a href="/" className="whatsapp-item"></a>
                         <a href="/" className="telegram-item"></a>
                     </div>
-                    <a href="#" className="logo-footer"></a>
+                    <Link to='/' className="logo-footer"></Link>
                     <div className="phone">
                         <span className="phone-icon"></span>
                         <span className="first-phone">
