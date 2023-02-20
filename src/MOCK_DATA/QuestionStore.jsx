@@ -24,7 +24,7 @@ export const questionStore = {
           text: 'По любой из указанных',
         }
       ],
-      status: 'Следующий вопрос'
+      status: 'Отправить'
     },
 
     {
@@ -50,7 +50,7 @@ export const questionStore = {
           text: 'Не менее 50 км/ч и не более 90 км/ч',
         }
       ],
-      status: 'Следующий вопрос'
+      status: 'Отправить'
     },
 
     {
@@ -76,7 +76,7 @@ export const questionStore = {
           text: 'По любой из указанных',
         }
       ],
-      status: 'Следующий вопрос'
+      status: 'Отправить'
     },
 
     {
@@ -102,7 +102,7 @@ export const questionStore = {
           text: 'По любой из указанных',
         }
       ],
-      status: 'Следующий вопрос'
+      status: 'Отправить'
     },
 
     {
@@ -128,7 +128,7 @@ export const questionStore = {
           text: 'По любой из указанных',
         }
       ],
-      status: 'Завершить тест'
+      status: 'Завершить'
     }
   ]
 }

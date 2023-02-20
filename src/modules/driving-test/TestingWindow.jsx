@@ -3,6 +3,8 @@ import {questionStore} from "../../MOCK_DATA/QuestionStore";
 import QuestionItem from "./questions/QuestionItem";
 import ResultPage from "../../pages/ResultPage/ResultPage";
 
+import './TestingWindow.css';
+
 const DrivingTestModule = () => {
 
   const [answer, setAnswer] = useState(0)
@@ -66,8 +68,8 @@ const DrivingTestModule = () => {
 
 
   return (
-    <div>
-      <h1>Пробный тест ПДД</h1>
+    <div className='testing-window-block'>
+      <h1 className='testing-window-header container '>Пробный тест ПДД</h1>
       {isShowResult ? (
         <ResultPage
           getResult={getResult}
