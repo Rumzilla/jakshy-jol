@@ -1,10 +1,14 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import Header from "../header/header";
 
 import "./main-block.css";
 
 const MainBlock = () => {
+
+    const {t} = useTranslation()
+
     return (
         <div className="main-block-background">
             <Header />
@@ -14,13 +18,13 @@ const MainBlock = () => {
                         <div className="main-block-car-img"></div>
                     </div>
                     <h2 className="main-block-header">
-                        Персональные уроки по вождению
+                        {t("text")}
                     </h2>
                     <h3 className="main-block-subheader">
-                        Практические занятия дают 80% результата в обучении. Обучайтесь правильно и выгодно!
+                        {t("subheader")}
                     </h3>
                     <p className="main-block-consultation">
-                        Получите полную консультацию по звонку!
+                        {t("consultation")}
                     </p>
                     <div className="main-block-contact">
                         <Link to='/' className="main-block-whatsapp">
@@ -36,7 +40,7 @@ const MainBlock = () => {
                         <div className="main-block-work-time">
                             <div className="main-block-work-time-graph">
                                 <span className="main-block-work-time-graph-icon"></span>
-                                График работы 
+                                {t("timegraph")}
                             </div>
                             <div className="main-block-work-time-text">
                             ПН-ВС; 09:00-18:00
@@ -56,4 +60,4 @@ const MainBlock = () => {
     )
 }
 
-export default MainBlock;
+export default MainBlock

@@ -14,7 +14,7 @@ function App() {
           <Route exact path="/result" component={ResultPage} />
         </Switch>
       </BrowserRouter>
-
+      
   );
 }
 
