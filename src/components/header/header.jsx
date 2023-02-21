@@ -24,8 +24,8 @@ const Header = () => {
                     <a href="/" className="telegram-item"></a>
                     <Link to="/" className="lang">
                         <div className="lang-menu">
-                            <Link to="/" className="lang-menu-item">Кыргызский</Link>
-                            <Link to="/" className="lang-menu-item">Русский</Link>
+                            <Link onClick={() => changeLanguage('kg')} to="/" className="lang-menu-item">Кыргызский</Link>
+                            <Link onClick={() => changeLanguage('ru')} to="/" className="lang-menu-item">Русский</Link>
                         </div>
                     </Link>
 
