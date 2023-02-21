@@ -19,13 +19,9 @@ const QuestionItem = (props) => {
             {data.text}
           </h2>
           <div className="question-block-image">
-            <img src={data.image} alt="image-test"/>
+            <img className="image-block" src={data.image} alt="image-test"/>
           </div>
-
           <AnswerItem />
-
-
-
           <div id="answer-list">
             Разъяснение ответа
           </div>

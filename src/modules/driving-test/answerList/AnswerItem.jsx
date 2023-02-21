@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import questionItem from "../questions/QuestionItem";
 
 const AnswerItem = () => {
 
   const [answer, setAnswer] = useState([])
+  const [answerList, setAnswerList] = useState(1)
+
 
   const getAnswer = async () => {
-    const response = await fetch(`http://127.0.0.1:8000/api/question/${questionItem.data.id}/answer/`);
+    const response = await fetch(`http://127.0.0.1:8000/api/question/${answerList}/answer/`);
     const data = await response.json();
     return data;
   };
@@ -16,21 +17,24 @@ const AnswerItem = () => {
       setAnswer(data);
     });
   }, []);
-  console.log(getAnswer())
+
+  const renderAnswers = answer.map((elem) => {
+    return (elem.text)
+  })
+
   return (
     <div>
 
-
       <div id="question-inputs">
         <input
           onClick={(e) => null}
           type="radio"
           className="question-input"
-          id="q1"
+          id='1'
           name="q1"
-          value={'Вариант ответа 1'}
+          value='answer'
         />
-        <label htmlFor="q1">{}</label>
+        <label htmlFor="1">{renderAnswers[0]}</label>
       </div>
 
 
@@ -39,11 +43,11 @@ const AnswerItem = () => {
           onClick={(e) => null}
           type="radio"
           className="question-input"
-          id="q2"
+          id='2'
           name="q1"
-          value={'Вариант ответа 2'}
+          value='answer'
         />
-        <label htmlFor="q2">Вариант ответа 2</label>
+        <label htmlFor="2">{renderAnswers[1]}</label>
       </div>
 
 
@@ -52,12 +56,13 @@ const AnswerItem = () => {
           onClick={(e) => null}
           type="radio"
           className="question-input"
-          id="q3"
+          id='3'
           name="q1"
-          value={'Вариант ответа 3'}
+          value='answer'
         />
-        <label htmlFor="q3">Вариант ответа 3</label>
+        <label htmlFor="3">{renderAnswers[2]}</label>
       </div>
+
     </div>
   );
 };
