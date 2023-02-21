@@ -21,10 +21,10 @@ const MainBlock = () => {
                         {t("text")}
                     </h2>
                     <h3 className="main-block-subheader">
-                        Практические занятия дают 80% результата в обучении. Обучайтесь правильно и выгодно!
+                        {t("subheader")}
                     </h3>
                     <p className="main-block-consultation">
-                        Получите полную консультацию по звонку!
+                        {t("consultation")}
                     </p>
                     <div className="main-block-contact">
                         <Link to='/' className="main-block-whatsapp">
@@ -40,7 +40,7 @@ const MainBlock = () => {
                         <div className="main-block-work-time">
                             <div className="main-block-work-time-graph">
                                 <span className="main-block-work-time-graph-icon"></span>
-                                График работы 
+                                {t("timegraph")}
                             </div>
                             <div className="main-block-work-time-text">
                             ПН-ВС; 09:00-18:00

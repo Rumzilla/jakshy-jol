@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 import "./test-block.css"
 
 const TestBlock = () => {
+    const {t} = useTranslation()
     return (
         <div className="test-block">
             <div className="container">
@@ -14,29 +16,29 @@ const TestBlock = () => {
                     Жакшы Жол 
                 </h2>
                 <h2 className="test-block-subheader">
-                Научитесь водить правильно и безопасно вместе с опытным инструктором по вождению 
+                {t("test-subheader")}
                 </h2>
                 <div className="test-card-practice">
                     <div className="test-card-practice-img"></div>
                     <div className="test-card-practice-block">
                         <h3 className="test-card-practice-header">
-                        Практическое вождение авто с инструктором:
+                        {t("practice-subheader")}
                         </h3>
-                        <p className="test-card-practice-text">Автошкола «Жакшы - Жол», этот проект для всех жителей Бишкека. Автошкола Бишкека обучают вождению по категориям “B”. Если у вас есть права, но нет практики, наш инструктор поможет вам с практикой. Первые уроки будут с инструктором на его машине Honda Jazz(коробка автомат). </p>
-                        <p className="test-card-practice-text">Стоимость практики можно узнать у него по телефону, по WhatsApp.</p>
+                        <p className="test-card-practice-text">{t("practice-text")} </p>
+                        <p className="test-card-practice-text">{t("practice-text2")}</p>
                     </div>
                 </div>
                 <div className="test-card-task">
                     <div className="test-card-task-img"></div>
                     <div className="test-card-task-block">
                         <h3 className="test-card-task-header">
-                            Пройти пробный тест
+                            {t("task-header")}
                         </h3>
                         <p className="test-card-task-text">
-                        Проверьте свои знания ПДД вместе с нами. Вам дается 25 минут чтобы ответить на 20 вопросов с иллюстрациями и вариантами ответов, узнайте уровень ваших знаний ПДД 
+                        {t("task-text")}
                         </p>
                         <Link to='/test' className="pass-the-test">
-                        Пройти Тест!
+                        {t("test-button")}
                         </Link>
                     </div>
                 </div>

@@ -1,8 +1,10 @@
 import React from "react"; 
+import { useTranslation } from "react-i18next";
 
 import "./sale-block.css";
 
 const SaleBlock = () => {
+    const {t} = useTranslation()
     return (
         <div className="sale-block-green">
             <div className="container">
@@ -10,12 +12,12 @@ const SaleBlock = () => {
                     <div className="book-img"></div>
                     <div className="sale-block-info">
                         <h3 className="sale-info-header">
-                        Методическое пособие:
+                        {t("info-header")}
                         </h3>
-                        <p className="sale-info-text">Методическое пособие по правилам дорожного движения (пдд) с иллюстрациями и комментариями . методическое пособие составлено с дополнениями и пояснениями к дорожным знакам и разметкам.</p>
-                        <p className="sale-info-text">При покупке оптом возможны скидки. за более подробной информацией обращаться напрямую к Руслану Жакшылыковичу по телефону или WhatsApp</p>
+                        <p className="sale-info-text">{t("info-text")}</p>
+                        <p className="sale-info-text">{t("info-text2")}</p>
                         <p className="sale-info-address">
-                        Вы можете приобрести данное пособие по адресу: <u>Сухе Ботора 26/1</u> либо по звонку <u>0552 209 809</u>
+                        {t("info-adress")} <u>Сухе Ботора 26/1</u> {t("info-call")} <u>0552 209 809</u>
                         </p>
                     </div>
                 </div>
