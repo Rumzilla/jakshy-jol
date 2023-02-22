@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import QuestionItem from "./questions/QuestionItem";
 import {question} from "../../MOCK_DATA";
 import './TestingWindow.css';
@@ -27,12 +27,12 @@ const DrivingTestModule = () => {
     if (event.target.value === 'false') {
       if (flag === 0) {
         setAnswer(answer + 1)
-        setFlag(flag - 1)
+        setFlag(flag + 1)
       } else { setAnswer(answer) }
     } else {
       if (flag !== 0) {
-        setFlag(flag + 1)
-        setAnswer(answer + 1)
+        setFlag(flag - 1)
+        setAnswer(answer - 1)
       } else {
         setAnswer(answer)
       }
