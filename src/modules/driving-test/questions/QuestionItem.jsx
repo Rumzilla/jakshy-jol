@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useEffect, useState} from 'react';
+import {question} from "../../../MOCK_DATA";
 import './style.css'
 
 
@@ -9,7 +10,16 @@ const QuestionItem = (props) => {
     totalQuestionsNumber,
     getAnswer,
     result,
+    activeQuestionNumber
   } = props
+
+  const [inputValue, setInputValue] = useState('Следующий вопрос')
+
+  useEffect(() => {
+    if (activeQuestionNumber === question.length) {
+      setInputValue('Закончить тест')
+    }
+  }, [inputValue])
 
   return (
       <div className="question-block">
@@ -67,7 +77,7 @@ const QuestionItem = (props) => {
           </div>
           <div className="question-line"></div>
           <div className="question-btn-wrap">
-            <input className="question-btn-next" type="button" value='След' onClick={getReset}/>
+            <input className="question-btn-next" type="button" value={inputValue} onClick={getReset}/>
           </div>
         </div>
       </div>

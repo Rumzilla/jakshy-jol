@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import QuestionItem from "./questions/QuestionItem";
 import {question} from "../../MOCK_DATA";
 import './TestingWindow.css';
