@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import QuestionItem from "./questions/QuestionItem";
 import {question} from "../../MOCK_DATA";
 import './TestingWindow.css';
@@ -9,6 +9,12 @@ const DrivingTestModule = () => {
   const [flag, setFlag] = useState(0)
   const [answer, setAnswer] = useState(0)
   const [result, setResult] = useState(0)
+
+  useEffect(() => {
+    if (result > 2) {
+      alert('Предельное количество ошибок *переход на страницу result*')
+    }
+  }, [result])
 
   const getReset = () => {
     setActiveQuestionNumber(prev => prev + 1)
@@ -58,8 +64,7 @@ const DrivingTestModule = () => {
     })
   }
   return (
-    <div className='testing-window-block'>
-      <h1 className='testing-window-header container '>Пробный тест ПДД</h1>
+    <div>
       {renderQuestions()}
     </div>
   );
