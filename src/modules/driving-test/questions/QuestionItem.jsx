@@ -16,6 +16,7 @@ const QuestionItem = (props) => {
 
   const [inputValue, setInputValue] = useState('Следующий вопрос')
 
+  //Этот хук следит за номером вопроса, и если он ластовый, то выдает value "Закончить тест"
   useEffect(() => {
     if (activeQuestionNumber === question.length) {
       setInputValue('Закончить тест')

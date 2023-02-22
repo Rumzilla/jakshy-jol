@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import QuestionItem from "./questions/QuestionItem";
 import {question} from "../../MOCK_DATA";
+import ResultPage from "../../pages/ResultPage/ResultPage";
 import './TestingWindow.css';
 
 const DrivingTestModule = () => {
@@ -9,13 +10,16 @@ const DrivingTestModule = () => {
   const [flag, setFlag] = useState(0)
   const [answer, setAnswer] = useState(0)
   const [result, setResult] = useState(0)
+  const [switchToResult, setSwitchToResult] = useState(false)
 
+  // Данный хук следит за количеством ошибок и если их больше 2
   useEffect(() => {
     if (result > 2) {
-      alert('Предельное количество ошибок *переход на страницу result*')
+      setSwitchToResult(true)
     }
   }, [result])
 
+  // Эта функция для кнопки "Отправить".
   const getReset = () => {
     setActiveQuestionNumber(prev => prev + 1)
     setAnswer(0)
@@ -23,12 +27,14 @@ const DrivingTestModule = () => {
     setResult(result + answer)
   }
 
+  // Эта функция для кнопки "Пройти тест заново". Пока нигде не используется.
   const getResult = () => {
     setAnswer(0)
     setFlag(0)
     setResult(0)
   }
 
+  //Эта функция для счетчка ошибок
   const getAnswer = (event) => {
     if (event.target.value === 'false') {
       if (flag === 0) {
@@ -45,6 +51,7 @@ const DrivingTestModule = () => {
     }
   }
 
+  //Эта функция для того, чтобы 1 вопрос отрисовывался на отдельной странице
   const renderQuestions = () => {
     return question.map((elem, idx) => {
       if (activeQuestionNumber !== elem.questionNumber) {
@@ -63,9 +70,10 @@ const DrivingTestModule = () => {
       )
     })
   }
+
   return (
     <div>
-      {renderQuestions()}
+      {switchToResult ?  <ResultPage /> : renderQuestions()}
     </div>
   );
 };
