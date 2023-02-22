@@ -1,39 +1,58 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import QuestionItem from "./questions/QuestionItem";
+import {question} from "../../MOCK_DATA";
 import './TestingWindow.css';
 
 const DrivingTestModule = () => {
 
   const [activeQuestionNumber, setActiveQuestionNumber] = useState(1)
-  const [questions, setQuestions] = useState([])
-
-  const getQuestions = async () => {
-    const response = await fetch('http://127.0.0.1:8000/api/question/');
-    const data = await response.json();
-    return data;
-  };
-
-  useEffect(() => {
-    getQuestions().then(data => {
-      setQuestions(data);
-    });
-  }, []);
+  const [flag, setFlag] = useState(0)
+  const [answer, setAnswer] = useState(0)
+  const [result, setResult] = useState(0)
 
   const getReset = () => {
     setActiveQuestionNumber(prev => prev + 1)
+    setAnswer(0)
+    setFlag(0)
+    setResult(result + answer)
+  }
+
+  const getResult = () => {
+    setAnswer(0)
+    setFlag(0)
+    setResult(0)
+  }
+
+  const getAnswer = (event) => {
+    if (event.target.value === 'false') {
+      if (flag === 0) {
+        setAnswer(answer + 1)
+        setFlag(flag - 1)
+      } else { setAnswer(answer) }
+    } else {
+      if (flag !== 0) {
+        setFlag(flag + 1)
+        setAnswer(answer + 1)
+      } else {
+        setAnswer(answer)
+      }
+    }
   }
 
   const renderQuestions = () => {
-    return questions.map((elem, idx) => {
-      if (activeQuestionNumber !== elem.id) {
+    return question.map((elem, idx) => {
+      if (activeQuestionNumber !== elem.questionNumber) {
         return
       }
       return (
         <QuestionItem
           key={`question_${idx}`}
-          totalQuestionsNumber={questions.length}
+          totalQuestionsNumber={question.length}
           data={elem}
           getReset={getReset}
+          getAnswer={getAnswer}
+          activeQuestionNumber={activeQuestionNumber}
+          result={result}
         />
       )
     })
