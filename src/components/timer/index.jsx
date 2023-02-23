@@ -1,8 +1,10 @@
 import React from "react";
+import { Redirect } from "react-router-dom";
+import ResultPage from "../../pages/ResultPage/ResultPage";
 
 import "./timer.css";
 
-const CountDown = ({minutes = 0, seconds = 5 }) => {
+const CountDown = ({minutes = 20, seconds = 0 }) => {
   const [paused, setPaused] = React.useState(false);
   const [over, setOver] = React.useState(false);
   const [[m, s], setTime] = React.useState([minutes, seconds]);
@@ -40,7 +42,7 @@ const CountDown = ({minutes = 0, seconds = 5 }) => {
             ${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}
             `}
             </p>
-            <div className="timer-block-over">{over ? "Время вышло" : ''}</div>
+            <div className="timer-block-over">{over ? <Redirect to="/result" /> : ''}</div>
           </div>
       </div>
     </div>
