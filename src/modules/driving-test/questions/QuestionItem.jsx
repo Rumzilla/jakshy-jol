@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {question} from "../../../MOCK_DATA";
-import './style.css'
 import CountDown from "../../../components/timer";
+import './style.css'
 
 
 const QuestionItem = (props) => {
@@ -11,10 +11,11 @@ const QuestionItem = (props) => {
     totalQuestionsNumber,
     getAnswer,
     result,
-    activeQuestionNumber
+    activeQuestionNumber,
   } = props
 
   const [inputValue, setInputValue] = useState('Следующий вопрос')
+
 
   //Этот хук следит за номером вопроса, и если он ластовый, то выдает value "Закончить тест"
   useEffect(() => {

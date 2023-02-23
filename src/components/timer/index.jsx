@@ -30,7 +30,7 @@ const CountDown = ({minutes = 0, seconds = 5 }) => {
   React.useEffect(() => {
     const timerID = setInterval(() => tick(), 1000);
     return () => clearInterval(timerID);
-  });
+  },);
 
   return (
     <div className="timer-block">
