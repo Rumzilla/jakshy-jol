@@ -1,11 +1,13 @@
 import React from 'react';
 import DrivingTestModule from "../../modules/driving-test/TestingWindow";
 import {Route} from "react-router-dom";
+import CountDown from '../../components/timer';
 
 const TestPage = () => {
   return (
     <div>
       <Route exact path="/test">
+        <CountDown />
         <DrivingTestModule />
       </Route>
     </div>

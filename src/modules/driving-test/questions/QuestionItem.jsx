@@ -24,7 +24,6 @@ const QuestionItem = (props) => {
 
   return (
     <div>
-      <CountDown />
       <div className='testing-window-block'>
         <h1 className='testing-window-header container '>Пробный тест ПДД</h1>
       </div>

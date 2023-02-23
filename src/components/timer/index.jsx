@@ -25,8 +25,12 @@ const CountDown = ({minutes = 20, seconds = 0}) => {
   const finishTime = () => {
     const min = (minutes - 1) - m
     const sec = 60 - s
-    return ( ` ${min}:${sec}` )
+    return (
+      `${min}:${sec}`
+    )
   }
+  console.log(finishTime())
+
 //   const reset = () => {
 //     setTime([parseInt(hours), parseInt(minutes), parseInt(seconds)]);
 //     setPaused(false);
@@ -49,7 +53,7 @@ const CountDown = ({minutes = 20, seconds = 0}) => {
             ${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}
             `}
             </p>
-            <div className="timer-block-over">{over ? <Redirect to="/result" timerOver={finishTime()} /> : ''}</div>
+            <div className="timer-block-over">{over ? <Redirect to="/result" /> : ''}</div>
           </div>
       </div>
     </div>
