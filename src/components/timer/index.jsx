@@ -1,8 +1,5 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
-import ResultPage from "../../pages/ResultPage/ResultPage";
-import { useState, useEffect } from "react";
-
 import "./timer.css";
 
 const CountDown = ({minutes = 20, seconds = 0}) => {
@@ -28,13 +25,8 @@ const CountDown = ({minutes = 20, seconds = 0}) => {
   const finishTime = () => {
     const min = (minutes - 1) - m
     const sec = 60 - s
-    return (
-      <p>
-        {min}:{sec}
-      </p>
-    )
+    return ( ` ${min}:${sec}` )
   }
-
 //   const reset = () => {
 //     setTime([parseInt(hours), parseInt(minutes), parseInt(seconds)]);
 //     setPaused(false);
