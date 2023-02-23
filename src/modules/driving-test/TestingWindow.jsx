@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 import QuestionItem from "./questions/QuestionItem";
 import {question} from "../../MOCK_DATA";
 import ResultPage from "../../pages/ResultPage/ResultPage";
+import { Redirect } from 'react-router-dom';
+
 import './TestingWindow.css';
 
 const DrivingTestModule = () => {
@@ -73,7 +75,7 @@ const DrivingTestModule = () => {
 
   return (
     <div>
-      {switchToResult ?  <ResultPage /> : renderQuestions()}
+      {switchToResult ?  <Redirect to="/result" /> : renderQuestions()}
     </div>
   );
 };
