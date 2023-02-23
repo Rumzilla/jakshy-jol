@@ -1,9 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import QuestionItem from "./questions/QuestionItem";
 import {question} from "../../MOCK_DATA";
-import ResultPage from "../../pages/ResultPage/ResultPage";
-import { Redirect } from 'react-router-dom';
-
+import {Redirect} from "react-router-dom";
 import './TestingWindow.css';
 
 const DrivingTestModule = () => {
@@ -20,6 +18,13 @@ const DrivingTestModule = () => {
       setSwitchToResult(true)
     }
   }, [result])
+
+  //Данный хук переводит на страницу результата после последнего вопроса
+  useEffect(() => {
+    if (activeQuestionNumber === question.length + 1) {
+      setSwitchToResult(true)
+    }
+  },)
 
   // Эта функция для кнопки "Отправить".
   const getReset = () => {
@@ -72,10 +77,9 @@ const DrivingTestModule = () => {
       )
     })
   }
-
   return (
     <div>
-      {switchToResult ?  <Redirect to="/result" /> : renderQuestions()}
+            {switchToResult ?  <Redirect to="/result" /> : renderQuestions()}
     </div>
   );
 };
