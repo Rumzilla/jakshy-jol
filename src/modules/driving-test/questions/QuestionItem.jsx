@@ -1,6 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import {question} from "../../../MOCK_DATA";
-import CountDown from "../../../components/timer";
 import './style.css'
 
 const QuestionItem = (props) => {
@@ -10,14 +8,15 @@ const QuestionItem = (props) => {
     totalQuestionsNumber,
     getAnswer,
     result,
-    activeQuestionNumber,
+    activeQuestionNumber
   } = props
+
 
   const [inputValue, setInputValue] = useState('Следующий вопрос')
 
   //Этот хук следит за номером вопроса, и если он ластовый, то выдает value "Закончить тест"
   useEffect(() => {
-    if (activeQuestionNumber === question.length) {
+    if (activeQuestionNumber === totalQuestionsNumber) {
       setInputValue('Закончить тест')
     }
   }, [inputValue])
@@ -30,9 +29,9 @@ const QuestionItem = (props) => {
       <div className="question-block">
         <div className="container">
           <div>Ошибки: {result}/2</div>
-          <div className="question-block-header">Вопрос {data.questionNumber} из {totalQuestionsNumber}</div>
+          <div className="question-block-header">Вопрос {data.id} из {totalQuestionsNumber}</div>
           <h2 className="question-block-title">
-            <span className="question-block-number">{data.questionNumber}.</span>
+            <span className="question-block-number">{data.id}.</span>
             {data.text}
           </h2>
           <div className="question-block-image">
@@ -41,6 +40,7 @@ const QuestionItem = (props) => {
 
           <div id="question-inputs">
             <input
+              defaultChecked
               onClick={(e) => getAnswer(e)}
               type="radio"
               className="question-input"

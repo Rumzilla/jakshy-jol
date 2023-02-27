@@ -1,14 +1,17 @@
 import React from 'react';
 import DrivingTestModule from "../../modules/driving-test/TestingWindow";
 import {Route} from "react-router-dom";
-import CountDown from '../../components/timer';
+import CountDown from "../../components/timer";
 
-const TestPage = () => {
+
+
+const TestPage = (props) => {
+  const {finishTime} = props
   return (
     <div>
       <Route exact path="/test">
         <CountDown />
-        <DrivingTestModule />
+        <DrivingTestModule/>
       </Route>
     </div>
   );
