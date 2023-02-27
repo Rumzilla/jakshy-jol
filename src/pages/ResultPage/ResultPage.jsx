@@ -9,8 +9,6 @@ const ResultPage = () => {
       <NavLink to="/test">
         <input type="button" className="result-button" value="Пройти заново"/>
       </NavLink>
-
-
     </div>
   )
 }

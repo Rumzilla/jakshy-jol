@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import QuestionItem from "./questions/QuestionItem";
-import {question} from "../../MOCK_DATA";
-import {Redirect} from "react-router-dom";
 import './TestingWindow.css';
+import Questions from "../../MOCK_DATA/question";
+
 
 const DrivingTestModule = () => {
 
@@ -10,21 +10,13 @@ const DrivingTestModule = () => {
   const [flag, setFlag] = useState(0)
   const [answer, setAnswer] = useState(0)
   const [result, setResult] = useState(0)
-  const [switchToResult, setSwitchToResult] = useState(false)
+  const [question, setQuestion] = useState(Questions)
 
-  // Данный хук следит за количеством ошибок и если их больше 2
   useEffect(() => {
-    if (result > 2) {
-      setSwitchToResult(true)
-    }
-  }, [result])
-
-  //Данный хук переводит на страницу результата после последнего вопроса
-  useEffect(() => {
-    if (activeQuestionNumber === question.length + 1) {
-      setSwitchToResult(true)
-    }
-  },)
+    if (question === []) {
+      return(console.log('loading'))
+    } else {setQuestion(question)}
+  }, [])
 
   // Эта функция для кнопки "Отправить".
   const getReset = () => {
@@ -61,7 +53,7 @@ const DrivingTestModule = () => {
   //Эта функция для того, чтобы 1 вопрос отрисовывался на отдельной странице
   const renderQuestions = () => {
     return question.map((elem, idx) => {
-      if (activeQuestionNumber !== elem.questionNumber) {
+      if (activeQuestionNumber !== elem.id) {
         return
       }
       return (
@@ -79,9 +71,25 @@ const DrivingTestModule = () => {
   }
   return (
     <div>
-            {switchToResult ?  <Redirect to="/result" /> : renderQuestions()}
+      {renderQuestions()}
     </div>
   );
 };
 
 export default DrivingTestModule;
+
+
+
+// // Данный хук следит за количеством ошибок и если их больше 2
+// useEffect(() => {
+//   if (result > 2) {
+//     setSwitchToResult(true)
+//   }
+// }, [result])
+//
+// //Данный хук переводит на страницу результата после последнего вопроса
+// useEffect(() => {
+//   if (activeQuestionNumber === question.length + 1) {
+//     setSwitchToResult(true)
+//   }
+// }, [])
