@@ -1,10 +1,30 @@
 import React, {useEffect, useState} from 'react';
 import QuestionItem from "./questions/QuestionItem";
 import './TestingWindow.css';
-import Questions from "../../MOCK_DATA/question";
+import { useDispatch, useSelector } from "react-redux";
+import postOperations from "../../redux/questions/thunk"
+
 
 
 const DrivingTestModule = () => {
+
+  //====REDUX STATES====
+
+  const Questions = useSelector(state => state.questions.list)
+
+  const dispatch = useDispatch()
+
+  const {fetchQuestions} = postOperations
+
+  useEffect(() => {
+    dispatch(postOperations.fetchQuestions())
+  }, [])
+  console.log(Questions)
+
+
+
+
+  //====END REDUX====
 
   const [activeQuestionNumber, setActiveQuestionNumber] = useState(1)
   const [flag, setFlag] = useState(0)
@@ -52,14 +72,14 @@ const DrivingTestModule = () => {
 
   //Эта функция для того, чтобы 1 вопрос отрисовывался на отдельной странице
   const renderQuestions = () => {
-    return question.map((elem, idx) => {
+    return Questions.map((elem, idx) => {
       if (activeQuestionNumber !== elem.id) {
         return
       }
       return (
         <QuestionItem
           key={`question_${idx}`}
-          totalQuestionsNumber={question.length}
+          totalQuestionsNumber={Questions.length}
           data={elem}
           getReset={getReset}
           getAnswer={getAnswer}
