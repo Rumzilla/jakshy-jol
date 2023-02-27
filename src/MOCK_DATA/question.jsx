@@ -1,28 +1,14 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
+import axios from 'axios';
+
+const API = 'http://127.0.0.1:8000/api/question/';
 
 const Questions = () => {
+axios.get(API)
+.then(response => console.log(response.data))
+}
 
-  const [question, setQuestion] = useState([])
+export default Questions
 
-  const getQuestions = async () => {
-    const response = await fetch('http://127.0.0.1:8000/api/question/');
-    const data = await response.json();
-    return data;
-  };
-
-  useEffect(() => {
-    getQuestions().then(data => {
-      setQuestion(data);
-    });
-  }, []);
-
-  return (
-    question
-  );
-};
-
-
-
-export default Questions;
 
 
