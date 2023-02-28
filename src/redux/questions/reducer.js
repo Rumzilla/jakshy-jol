@@ -1,4 +1,4 @@
-import { GET_QUESTIONS } from "./types"
+import { GET_QUESTIONS, GET_BLOG } from "./types"
 
 const initialState = {
     loading: false,
@@ -26,6 +26,23 @@ const questionsReducer = (state = initialState, action) => {
                 error: action.payload,
                 loading: false
             }
+            case GET_BLOG.REQUEST:
+                return {
+                    ...state,
+                    loading: true
+                }
+            case GET_BLOG.RECEIVE:
+                return {
+                    ...state,
+                    list: action.payload,
+                    loading: false
+                }
+            case GET_BLOG.FAILURE:
+                return {
+                    ...state,
+                    error: action.payload,
+                    loading: false
+                }
         default:
             return state
     }

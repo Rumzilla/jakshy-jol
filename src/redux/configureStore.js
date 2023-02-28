@@ -4,7 +4,7 @@ import questionsReducer from "./questions/reducer"
 import thunk from 'redux-thunk'
 
 const rootReducer = combineReducers({
-    questions: questionsReducer
+    questions: questionsReducer,
 })
 
 
