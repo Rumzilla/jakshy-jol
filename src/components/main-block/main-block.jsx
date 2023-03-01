@@ -27,14 +27,14 @@ const MainBlock = () => {
                         {t("consultation")}
                     </p>
                     <div className="main-block-contact">
-                        <Link to='/' className="main-block-whatsapp">
+                        <a href='https://wa.me/996705265747' className="main-block-whatsapp">
                             <span className="main-block-whatsapp-icon"></span>
                             WhatsApp
-                        </Link>
-                        <div className="main-block-phone">
+                        </a>
+                        <a href="tel:+996552209809" className="main-block-phone">
                             <span className="main-block-phone-icon"></span>
                                 0552 209 809
-                        </div>
+                        </a>
                     </div>
                     <div className="main-block-footer">
                         <div className="main-block-work-time">
@@ -46,10 +46,10 @@ const MainBlock = () => {
                             ПН-ВС; 09:00-18:00
                             </div>
                         </div>
-                        <Link to='/' className="main-block-gmail">
+                        <a href='Mailto:ruslanjakshylykov@gmail.com' className="main-block-gmail">
                             <span className="main-block-gmail-icon"></span>
                             ruslanjakshylykov@gmail.com
-                        </Link>
+                        </a>
 
                     </div>
                     
