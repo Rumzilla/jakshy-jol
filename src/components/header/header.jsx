@@ -29,7 +29,7 @@ const Header = () => {
                         </div>
                     </Link>
 
-                    <Link to='/' className="admin"></Link>
+                    <a href='http://127.0.0.1:8000/admin/' className="admin"></a>
                 </div>              
             </div>
         </div>
