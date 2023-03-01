@@ -4,22 +4,16 @@ import './style.css'
 const QuestionItem = (props) => {
   const {
     data,
-    getReset,
+    onGoNextQuestion,
+    onCheckAnswer,
     totalQuestionsNumber,
-    getAnswer,
-    result,
-    activeQuestionNumber
+    activeQuestionNumber,
+    isShowDescription,
+    errors,
+    onFinishTest
   } = props
 
-
-  const [inputValue, setInputValue] = useState('Следующий вопрос')
-
-  //Этот хук следит за номером вопроса, и если он ластовый, то выдает value "Закончить тест"
-  useEffect(() => {
-    if (activeQuestionNumber === totalQuestionsNumber) {
-      setInputValue('Закончить тест')
-    }
-  }, [inputValue])
+  const [currentAnswer, setCurrentAnswer] = useState(null)
 
   return (
     <div>
@@ -28,7 +22,7 @@ const QuestionItem = (props) => {
       </div>
       <div className="question-block">
         <div className="container">
-          <div>Ошибки: {result}/2</div>
+          <div>Ошибки: {errors}/2</div>
           <div className="question-block-header">Вопрос {data.id} из {totalQuestionsNumber}</div>
           <h2 className="question-block-title">
             <span className="question-block-number">{data.id}.</span>
@@ -38,50 +32,46 @@ const QuestionItem = (props) => {
             <img className="image-block" src={data.image} alt="image-test"/>
           </div>
 
-          <div id="question-inputs">
-            <input
-              defaultChecked
-              onClick={(e) => getAnswer(e)}
-              type="radio"
-              className="question-input"
-              id='1'
-              name="q1"
-              value={data.answers[0].answer}
-            />
-            <label htmlFor="1">{data.answers[0].text}</label>
-          </div>
+          {data.answers.map((answer, idx) => (
+            <div key={idx} className={`question-inputs ${isShowDescription ? 'disabled' : ''}`}>
+              <input
+                onClick={() => setCurrentAnswer(answer.answer)}
+                type="radio"
+                className="question-input"
+                id={idx}
+                name="q1"
+                disabled={isShowDescription}
+              />
+              <label htmlFor={idx}>{answer.text}</label>
+            </div>
+          ))}
 
-          <div id="question-inputs">
-            <input
-              onClick={(e) => getAnswer(e)}
-              type="radio"
-              className="question-input"
-              id='2'
-              name="q1"
-              value={data.answers[1].answer}
-            />
-            <label htmlFor="2">{data.answers[1].text}</label>
-          </div>
-
-          <div id="question-inputs">
-            <input
-              onClick={(e) => getAnswer(e)}
-              type="radio"
-              className="question-input"
-              id='3'
-              name="q1"
-              value={data.answers[2].answer}
-            />
-            <label htmlFor="3">{data.answers[2].text}</label>
-          </div>
-
-          <div id="answer-list">
-            {data.description}
-          </div>
+          {isShowDescription && (
+            <div id="answer-list">
+              {data.description}
+            </div>
+          )}
 
           <div className="question-line"></div>
           <div className="question-btn-wrap">
-            <input className="question-btn-next" type="button" value={inputValue} onClick={getReset}/>
+            {
+              (activeQuestionNumber === totalQuestionsNumber) && isShowDescription ? (
+                <input
+                  className="question-btn-next"
+                  type="button"
+                  value='Завершить тест'
+                  onClick={onFinishTest}
+                />
+              ) : (
+                <input
+                  className="question-btn-next"
+                  type="button"
+                  value={isShowDescription ? 'Следующий вопрос' : 'Ответить'}
+                  disabled={currentAnswer === null}
+                  onClick={isShowDescription ? onGoNextQuestion : () => onCheckAnswer(currentAnswer)}
+                />
+              )
+            }
           </div>
         </div>
       </div>

@@ -1,17 +1,20 @@
 import React from "react";
-import { Redirect } from "react-router-dom";
 import "./timer.css";
 
-const CountDown = ({minutes = 20, seconds = 0,}) => {
+const CountDown = (props) => {
+  const {
+    minutes = 20,
+    seconds = 0,
+    getTimerInfo,
+    isOver
+  } = props
 
-  const [paused, setPaused] = React.useState(false);
-  const [over, setOver] = React.useState(false);
+  const [over, setOver] = React.useState(isOver);
   const [[m, s], setTime] = React.useState([minutes, seconds]);
 
   const tick = () => {
-    if (paused || over) return;
 
-    if (m === 0 && s === 0) {
+    if ((m === 0 && s === 0) || isOver) {
       setOver(true);
     } else if (m === 0 && s === 0) {
       setTime([59, 59]);
@@ -22,26 +25,28 @@ const CountDown = ({minutes = 20, seconds = 0,}) => {
     }
   };
 
-  const finishTime = () => {
-    const min = (minutes - 1) - m
-    const sec = 60 - s
+  const getFinishTime = () => {
+    const min = minutes === 0 ? 0 : (minutes - 1) - m
+    const sec = (seconds !== 0 ? seconds : 60) - s
     return (
       `${min}:${sec}`
     )
   };
 
-//   const reset = () => {
-//     setTime([parseInt(hours), parseInt(minutes), parseInt(seconds)]);
-//     setPaused(false);
-//     setOver(false);
-//   };
-
   React.useEffect(() => {
     const timerID = setInterval(() => tick(), 1000);
-    return () => clearInterval(timerID);
-  },);
+    if (over) {
+      getTimerInfo({
+        isOver: over,
+        finishTime: getFinishTime()
+      })
+      return clearInterval(timerID)
+    }
 
-
+    return () => {
+      return clearInterval(timerID)
+    };
+  }, [m,s, over, isOver]);
 
   return (
     <div className="timer-block">
@@ -52,7 +57,6 @@ const CountDown = ({minutes = 20, seconds = 0,}) => {
             ${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}
             `}
             </p>
-            <div className="timer-block-over">{over ? <Redirect to="/result" /> : ''}</div>
           </div>
       </div>
     </div>

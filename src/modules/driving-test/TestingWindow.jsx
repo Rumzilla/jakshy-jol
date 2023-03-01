@@ -1,95 +1,99 @@
 import React, {useEffect, useState} from 'react';
 import QuestionItem from "./questions/QuestionItem";
 import './TestingWindow.css';
-import Questions from "../../MOCK_DATA/question";
+import CircularIndeterminate from "../../components/loader";
 
-
-const DrivingTestModule = () => {
+const DrivingTestModule = (props) => {
 
   const [activeQuestionNumber, setActiveQuestionNumber] = useState(1)
-  const [flag, setFlag] = useState(0)
-  const [answer, setAnswer] = useState(0)
-  const [result, setResult] = useState(0)
-  const [question, setQuestion] = useState(Questions)
+  const [question, setQuestion] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
+  const [isShowDescription, setIsShowDescription] = useState(false)
+  const [errors, setErrors] = useState(0)
+  const [correctAnswers, setCorrectAnswers] = useState(0)
+
+  const getQuestions = async () => {
+    const response = await fetch('http://127.0.0.1:8000/api/question/');
+    return await response.json();
+  };
 
   useEffect(() => {
-    if (question === []) {
-      return(console.log('loading'))
-    } else {setQuestion(question)}
-  }, [])
+    (async () => {
+      setIsLoading(true)
+      try {
+        const data  = await getQuestions()
+        setQuestion(data)
+      } catch (e) {
+        console.log(e, 'error')
+      } finally {
+        setIsLoading(false)
+      }
+    })()
+  }, []);
+
 
   // Эта функция для кнопки "Отправить".
-  const getReset = () => {
-    setActiveQuestionNumber(prev => prev + 1)
-    setAnswer(0)
-    setFlag(0)
-    setResult(result + answer)
-  }
-
-  // Эта функция для кнопки "Пройти тест заново". Пока нигде не используется.
-  const getResult = () => {
-    setAnswer(0)
-    setFlag(0)
-    setResult(0)
-  }
-
-  //Эта функция для счетчка ошибок
-  const getAnswer = (event) => {
-    if (event.target.value === 'false') {
-      if (flag === 0) {
-        setAnswer(answer + 1)
-        setFlag(flag + 1)
-      } else { setAnswer(answer) }
-    } else {
-      if (flag !== 0) {
-        setFlag(flag - 1)
-        setAnswer(answer - 1)
-      } else {
-        setAnswer(answer)
-      }
+  const handleGoNextQuestion = () => {
+    props.onChangeTest({
+      errors,
+      correctAnswers,
+      totalQuestionsNumbers: question.length
+    })
+    if (errors > 2) {
+      props.onFinishTest({
+        errors,
+        correctAnswers,
+        totalQuestionsNumbers: question.length
+      })
+      return
     }
+    setActiveQuestionNumber(prev => prev + 1)
+    setIsShowDescription(false)
   }
 
-  //Эта функция для того, чтобы 1 вопрос отрисовывался на отдельной странице
-  const renderQuestions = () => {
-    return question.map((elem, idx) => {
-      if (activeQuestionNumber !== elem.id) {
-        return
-      }
-      return (
-        <QuestionItem
-          key={`question_${idx}`}
-          totalQuestionsNumber={question.length}
-          data={elem}
-          getReset={getReset}
-          getAnswer={getAnswer}
-          activeQuestionNumber={activeQuestionNumber}
-          result={result}
-        />
-      )
+  const handleCheckAnswer = (answer) => {
+    if (!answer) {
+      setErrors(prev => prev + 1)
+    } else {
+      setCorrectAnswers(prev => prev + 1)
+    }
+    setIsShowDescription(true)
+  }
+
+  const handleFinishTest = () => {
+    props.onFinishTest({
+      errors,
+      correctAnswers,
+      totalQuestionsNumbers: question.length
     })
   }
+
+  if (isLoading) {
+    return <CircularIndeterminate />
+  }
+
   return (
     <div>
-      {renderQuestions()}
+      {question.map((elem, idx) => {
+        if (activeQuestionNumber !== elem.id) {
+          return
+        }
+        return (
+          <QuestionItem
+            key={`question_${idx}`}
+            totalQuestionsNumber={question.length}
+            data={elem}
+            onGoNextQuestion={handleGoNextQuestion}
+            activeQuestionNumber={activeQuestionNumber}
+            isShowDescription={isShowDescription}
+            onCheckAnswer={handleCheckAnswer}
+            errors={errors}
+            onFinishTest={handleFinishTest}
+          />
+        )
+      })}
     </div>
   );
 };
 
 export default DrivingTestModule;
-
-
-
-// // Данный хук следит за количеством ошибок и если их больше 2
-// useEffect(() => {
-//   if (result > 2) {
-//     setSwitchToResult(true)
-//   }
-// }, [result])
-//
-// //Данный хук переводит на страницу результата после последнего вопроса
-// useEffect(() => {
-//   if (activeQuestionNumber === question.length + 1) {
-//     setSwitchToResult(true)
-//   }
-// }, [])

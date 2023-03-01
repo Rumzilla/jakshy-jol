@@ -5,9 +5,6 @@ import InfoBlock from "../../components/info-block/info-block";
 import MainBlock from "../../components/main-block/main-block";
 import SaleBlock from "../../components/sale-block/sale-block";
 import TestBlock from "../../components/test-block/test-block";
-import Questions from "../../MOCK_DATA/question";
-
-Questions()
 
 const HomePage = () => {
     return (
