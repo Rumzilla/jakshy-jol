@@ -24,9 +24,9 @@ const BlogBlock = () => {
     return ( Blog.map((elem, idx) => {
         console.log(elem)
         return (
-            <div className="container">
+            <div className="container" key={idx}>
                 <div className="blog-block">
-                    <div className='blog-card' key={idx}>
+                    <div className='blog-card'>
                         <div className='blog-text'>
                             <h3>{elem.title}</h3>
                             {elem.text}

@@ -1,10 +1,4 @@
 // GET posts
-const GET_QUESTIONS = 
-{
-    REQUEST: 'GET_QUESTIONS_REQUEST',
-    RECEIVE: 'GET_QUESTIONS_RECEIVE',
-    FAILURE: 'GET_QUESTIONS_FAILURE'
-}
 
 const GET_BLOG =
 {
@@ -14,6 +8,5 @@ const GET_BLOG =
 }
 
 export {
-    GET_QUESTIONS,
     GET_BLOG
 }
