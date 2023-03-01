@@ -19,8 +19,8 @@ const Header = () => {
                     <span className="logo-text"></span>
                 </Link>
                 <div className="social-header-block">
-                    <a href="/" className="instagram-item"></a>
-                    <a href="/" className="whatsapp-item"></a>
+                    <a href="https://instagram.com/jakshyjol.kg?igshid=MjkzY2Y1YTY=" className="instagram-item"></a>
+                    <a href="https://wa.me/996705265747" className="whatsapp-item"></a>
                     <a href="/" className="telegram-item"></a>
                     <Link to="/" className="lang">
                         <div className="lang-menu">
