@@ -4,14 +4,16 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './18n'
+import { store } from './redux/configureStore';
+import { Provider } from 'react-redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
     <Suspense fallback={<div>Loading...</div>}>
-    <App />
+      <Provider store={store}>
+        <App />
+      </Provider>
     </Suspense>
-  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
