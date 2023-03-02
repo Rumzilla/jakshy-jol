@@ -1,5 +1,6 @@
 .question-block {
     background: #2A9D8F;
+    height: 100vh;
 }
 
 .question-block-header {
@@ -7,6 +8,13 @@
     font-size: 15px;
     line-height: 25px;
     color: #FFFFFF;
+}
+
+.errors-count-text {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 25px;
+    color: red;
 }
 
 .question-block-title {
