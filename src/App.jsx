@@ -1,4 +1,4 @@
-import {BrowserRouter, Route, Switch} from "react-router-dom";
+import {BrowserRouter, Route, Switch, HashRouter} from "react-router-dom";
 import HomePage from './pages/HomePage/HomePage';
 import TestPage from "./pages/TestPage/TestPage";
 import './App.css';
@@ -21,12 +21,12 @@ function App() {
   // console.log(Questions)
 
   return (
-      <BrowserRouter>
+      <HashRouter>
         <Switch> 
           <Route exact path="/" component={HomePage} />
           <Route exact path="/test" component={TestPage} />
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
       
   );
 }
