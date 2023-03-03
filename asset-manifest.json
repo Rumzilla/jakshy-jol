@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/jakshy-jol/static/css/main.4cccc3d6.css",
-    "main.js": "/jakshy-jol/static/js/main.f16dda1a.js",
+    "main.css": "/jakshy-jol/static/css/main.a3bd0ac4.css",
+    "main.js": "/jakshy-jol/static/js/main.347cba5f.js",
     "static/js/787.4f03cdc3.chunk.js": "/jakshy-jol/static/js/787.4f03cdc3.chunk.js",
     "static/media/book-img.png": "/jakshy-jol/static/media/book-img.2bb27d12693d24a6fa8d.png",
     "static/media/Photo.png": "/jakshy-jol/static/media/Photo.f221632d779d617d7071.png",
@@ -33,12 +33,12 @@
     "static/media/mail.svg": "/jakshy-jol/static/media/mail.8d5087712b6fb682216b.svg",
     "index.html": "/jakshy-jol/index.html",
     "static/media/getFetch.cjs": "/jakshy-jol/static/media/getFetch.40f37ddea2378391108f.cjs",
-    "main.4cccc3d6.css.map": "/jakshy-jol/static/css/main.4cccc3d6.css.map",
-    "main.f16dda1a.js.map": "/jakshy-jol/static/js/main.f16dda1a.js.map",
+    "main.a3bd0ac4.css.map": "/jakshy-jol/static/css/main.a3bd0ac4.css.map",
+    "main.347cba5f.js.map": "/jakshy-jol/static/js/main.347cba5f.js.map",
     "787.4f03cdc3.chunk.js.map": "/jakshy-jol/static/js/787.4f03cdc3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4cccc3d6.css",
-    "static/js/main.f16dda1a.js"
+    "static/css/main.a3bd0ac4.css",
+    "static/js/main.347cba5f.js"
   ]
 }
