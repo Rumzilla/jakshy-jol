@@ -13,7 +13,7 @@ const DrivingTestModule = (props) => {
   const [correctAnswers, setCorrectAnswers] = useState(0)
 
   const getQuestions = async () => {
-    const response = await fetch('http://43.207.186.205/api/question/');
+    const response = await fetch('http//43.207.186.205/api/question/');
     return await response.json();
   };
 
