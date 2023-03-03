@@ -7,7 +7,7 @@ import {
 const fetchBlog = () => async (dispatch) => {
     dispatch(getBlogRequestPostsActionCreator())
     try {
-        const req = await fetch ('http://127.0.0.1:8000/api/blog/')
+        const req = await fetch ('http://43.207.186.205/api/blog/')
         const parsedData = await req.json()
         console.log(parsedData)
             dispatch(getBlogReceivePostsActionCreator(parsedData))
