@@ -11,6 +11,7 @@ const DrivingTestModule = (props) => {
   const [isShowDescription, setIsShowDescription] = useState(false)
   const [errors, setErrors] = useState(0)
   const [correctAnswers, setCorrectAnswers] = useState(0)
+  const [showAnswer, setShowAnswer] = useState('')
 
   const getQuestions = async () => {
     const response = await fetch('http://43.207.186.205/api/question/');
@@ -54,8 +55,10 @@ const DrivingTestModule = (props) => {
   const handleCheckAnswer = (answer) => {
     if (!answer) {
       setErrors(prev => prev + 1)
+      setShowAnswer('Ответ неверный')
     } else {
       setCorrectAnswers(prev => prev + 1)
+      setShowAnswer('Ответ верный')
     }
     setIsShowDescription(true)
   }
@@ -88,6 +91,7 @@ const DrivingTestModule = (props) => {
             onCheckAnswer={handleCheckAnswer}
             errors={errors}
             onFinishTest={handleFinishTest}
+            showAnswer={showAnswer}
           />
         )
       })}

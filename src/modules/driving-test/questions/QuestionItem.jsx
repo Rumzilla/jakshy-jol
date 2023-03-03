@@ -10,11 +10,11 @@ const QuestionItem = (props) => {
     activeQuestionNumber,
     isShowDescription,
     errors,
-    onFinishTest
+    onFinishTest,
+    showAnswer
   } = props
 
   const [currentAnswer, setCurrentAnswer] = useState(null)
-
 
   return (
     <div>
@@ -53,7 +53,7 @@ const QuestionItem = (props) => {
           )}
           <div className="question-line"></div>
           <div>
-            {}
+            {isShowDescription ? showAnswer : ''}
           </div>
           <div className="question-btn-wrap">
             {
