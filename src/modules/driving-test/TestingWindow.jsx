@@ -59,11 +59,11 @@ const DrivingTestModule = (props) => {
     if (!answer) {
       setErrors(prev => prev + 1)
       setShowAnswer('Ответ неверный')
-      setAnswerColor('red')
+      setAnswerColor('#BB1919')
     } else {
       setCorrectAnswers(prev => prev + 1)
       setShowAnswer('Ответ верный')
-      setAnswerColor('green')
+      setAnswerColor('#11AE04')
     }
     setIsShowDescription(true)
   }
