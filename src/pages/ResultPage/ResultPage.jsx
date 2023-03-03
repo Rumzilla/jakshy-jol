@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import './style.css';
 
 const ResultPage = (props) => {
 
@@ -22,38 +23,52 @@ const ResultPage = (props) => {
 
   const testPassed = () => {
     return (
-      <div className="result-wrapper">
-        <h1>ТЕСТ ПРОЙДЕН</h1>
-        <h2 className="result-title">Результаты теста</h2>
-        <p> Количество ошибок: {countError}/2</p>
-        <p> Количество верных ответов: {correctAnswers}/{totalQuestionsNumber} </p>
-        <p> Потраченное время: {finishTime} </p>
-        <input
-          type="button"
-          className="result-button"
-          value="Пройти заново"
-          onClick={onResetTest}
-        />
-        <button><a href="/">На главную</a></button>
+      <div className="result-wrapper-failed test-passed">
+        <section className="result-list">
+          <div className='smile-block test-passed-smile' />
+          <p className="result-text">Тест пройден!</p>
+          <div className='test-results-list'>
+            <span className='test-results'>Время: {finishTime}</span>
+            <span className='test-results'>Ответы: {correctAnswers}/{totalQuestionsNumber}</span>
+            <span className='test-results error-color-text'>Ошибки: {countError}/2</span>
+          </div>
+          <div className='inputs-block-in-result'>
+            <div className='link-to-home-wrap'>
+              <a className='link-to-home' href="/">На главную</a>
+              <i className='icon-to-home'/>
+            </div>
+            <div className='link-to-home-wrap repeat-button'>
+              <div className='result-button' onClick={onResetTest}>Повторить</div>
+              <i className='icon-to-repeat'></i>
+            </div>
+          </div>
+        </section>
       </div>
     )
   }
 
   const testFailed = () => {
     return (
-      <div className="result-wrapper">
-        <h1>ТЕСТ ПРОВАЛЕН</h1>
-        <h2 className="result-title">Результаты теста</h2>
-        <p> Количество ошибок: {countError}/2</p>
-        <p> Количество верных ответов: {correctAnswers}/{totalQuestionsNumber} </p>
-        <p> Потраченное время: {finishTime} </p>
-        <input
-          type="button"
-          className="result-button"
-          value="Пройти заново"
-          onClick={onResetTest}
-        />
-        <button><a href="/">На главную</a></button>
+      <div className="result-wrapper-failed">
+        <section className="result-list">
+          <div className='smile-block' />
+          <p className="result-text">Тест не пройден!</p>
+          <div className='test-results-list'>
+            <span className='test-results'>Время: {finishTime}</span>
+            <span className='test-results'>Ответы: {correctAnswers}/{totalQuestionsNumber}</span>
+            <span className='test-results error-color-text'>Ошибки: {countError}/2</span>
+          </div>
+          <div className='inputs-block-in-result'>
+            <div className='link-to-home-wrap'>
+              <a className='link-to-home' href="/">На главную</a>
+              <i className='icon-to-home'/>
+            </div>
+            <div className='link-to-home-wrap repeat-button'>
+              <div className='result-button' onClick={onResetTest}>Повторить</div>
+              <i className='icon-to-repeat'></i>
+            </div>
+          </div>
+        </section>
       </div>
     )
   }
