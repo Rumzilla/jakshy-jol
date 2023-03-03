@@ -138,3 +138,42 @@
     line-height: 30px;
     color: rgba(0, 0, 0, 0.5);
 }
+
+@media (max-width: 390px) {
+    .card-block {
+        padding-top: 30px;
+    }
+
+    .card-bg {
+        width: 70px;
+        height: 70px;
+    }
+
+    .work-logo {
+        width: 50px;
+        height: 25px;
+    }
+
+    .driver-logo {
+        width: 36px;
+        height: 40px;
+    }
+
+    .time-logo {
+        width: 36px;
+        height: 37px;
+    }
+
+    .client-logo {
+        width: 53px;
+        height: 35px;
+    }
+
+    .card-text {
+        font-weight: 500;
+        font-size: 7px;
+        line-height: 10px;
+        text-align: center;
+        color: #000000;
+    }
+}
