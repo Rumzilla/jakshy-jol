@@ -15,17 +15,17 @@ const QuestionItem = (props) => {
 
   const [currentAnswer, setCurrentAnswer] = useState(null)
 
+
   return (
     <div>
       <div className='testing-window-block'>
-        <h1 className='testing-window-header container '>Пробный тест ПДД</h1>
       </div>
       <div className="question-block">
         <div className="container">
-          <div>Ошибки: {errors}/2</div>
           <div className="question-block-header">Вопрос {data.id} из {totalQuestionsNumber}</div>
+          <div className='errors-count-text'>Ошибки: {errors}/2</div>
           <h2 className="question-block-title">
-            <span className="question-block-number">{data.id}.</span>
+            <span className="question-block-number">{data.questionNamber}.</span>
             {data.text}
           </h2>
           <div className="question-block-image">
@@ -51,8 +51,10 @@ const QuestionItem = (props) => {
               {data.description}
             </div>
           )}
-
           <div className="question-line"></div>
+          <div>
+            {}
+          </div>
           <div className="question-btn-wrap">
             {
               (activeQuestionNumber === totalQuestionsNumber) && isShowDescription ? (

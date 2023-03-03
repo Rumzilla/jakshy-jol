@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import QuestionItem from "./questions/QuestionItem";
-import './TestingWindow.css';
 import CircularIndeterminate from "../../components/loader";
+import './TestingWindow.css';
 
 const DrivingTestModule = (props) => {
 
@@ -24,7 +24,7 @@ const DrivingTestModule = (props) => {
         const data  = await getQuestions()
         setQuestion(data)
       } catch (e) {
-        console.log(e, 'error')
+         alert('Сервер недоступен или отключен')
       } finally {
         setIsLoading(false)
       }
@@ -71,11 +71,10 @@ const DrivingTestModule = (props) => {
   if (isLoading) {
     return <CircularIndeterminate />
   }
-
   return (
     <div>
       {question.map((elem, idx) => {
-        if (activeQuestionNumber !== elem.id) {
+        if (activeQuestionNumber !== elem.questionNamber) {
           return
         }
         return (

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 
 const ResultPage = (props) => {
 
@@ -7,22 +7,61 @@ const ResultPage = (props) => {
     onResetTest,
     correctAnswers,
     totalQuestionsNumber,
-    finishTime
+    finishTime,
   } = props
 
+  const [finishTest, setFinishTest] = useState(false)
+
+  useEffect(() => {
+    if (countError < 3 && finishTime !== '20:00') {
+      setFinishTest(true)
+    } else {
+      setFinishTest(finishTest)
+    }
+  }, [finishTest])
+
+  const testPassed = () => {
+    return (
+      <div className="result-wrapper">
+        <h1>ТЕСТ ПРОЙДЕН</h1>
+        <h2 className="result-title">Результаты теста</h2>
+        <p> Количество ошибок: {countError}/2</p>
+        <p> Количество верных ответов: {correctAnswers}/{totalQuestionsNumber} </p>
+        <p> Потраченное время: {finishTime} </p>
+        <input
+          type="button"
+          className="result-button"
+          value="Пройти заново"
+          onClick={onResetTest}
+        />
+        <button><a href="/">На главную</a></button>
+      </div>
+    )
+  }
+
+  const testFailed = () => {
+    return (
+      <div className="result-wrapper">
+        <h1>ТЕСТ ПРОВАЛЕН</h1>
+        <h2 className="result-title">Результаты теста</h2>
+        <p> Количество ошибок: {countError}/2</p>
+        <p> Количество верных ответов: {correctAnswers}/{totalQuestionsNumber} </p>
+        <p> Потраченное время: {finishTime} </p>
+        <input
+          type="button"
+          className="result-button"
+          value="Пройти заново"
+          onClick={onResetTest}
+        />
+        <button><a href="/">На главную</a></button>
+      </div>
+    )
+  }
+
   return (
-    <div className="result-wrapper">
-      <h2 className="result-title">Результаты теста</h2>
-      <p> Количество ошибок: {countError}/2</p>
-      <p> Количество верных ответов: {correctAnswers}/{totalQuestionsNumber} </p>
-      <p> Потраченное время: {finishTime} </p>
-      <input
-        type="button"
-        className="result-button"
-        value="Пройти заново"
-        onClick={onResetTest}
-      />
-    </div>
+      <div>
+        {finishTest ? testPassed() : testFailed()}
+      </div>
   )
 }
 

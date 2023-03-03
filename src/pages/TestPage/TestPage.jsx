@@ -48,6 +48,7 @@ const TestPage = () => {
           correctAnswers={resultInfo.correctAnswers}
           totalQuestionsNumber={resultInfo.totalQuestionsNumbers}
           finishTime={timerInfo.finishTime}
+          timerInfo={timerInfo}
         />
       ) : (
         <>
