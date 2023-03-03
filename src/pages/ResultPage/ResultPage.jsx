@@ -13,7 +13,7 @@ const ResultPage = (props) => {
   const [finishTest, setFinishTest] = useState(false)
 
   useEffect(() => {
-    if (countError < 3 && finishTime !== '20:00') {
+    if (countError < 3 && finishTime !== '19:60') {
       setFinishTest(true)
     } else {
       setFinishTest(finishTest)
