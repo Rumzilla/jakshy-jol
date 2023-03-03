@@ -1,66 +1,78 @@
-import React from "react";
+import React, {useEffect, useState} from 'react';
 import './style.css'
 
 const QuestionItem = (props) => {
   const {
     data,
-    getAnswer,
-    getReset,
+    onGoNextQuestion,
+    onCheckAnswer,
     totalQuestionsNumber,
+    activeQuestionNumber,
+    isShowDescription,
+    errors,
+    onFinishTest
   } = props
 
+  const [currentAnswer, setCurrentAnswer] = useState(null)
 
   return (
-    <div className="test-wrapper">
-      <div>Вопрос {data.questionNumber} из {totalQuestionsNumber}</div>
-      <h2 className="question-title">
-        <span>{data.questionNumber}</span>
-        {data.question}
-      </h2>
-      <div className="question-image">
-        <img src={data.image} alt="image-test"/>
+    <div>
+      <div className='testing-window-block'>
+        <h1 className='testing-window-header container '>Пробный тест ПДД</h1>
       </div>
-      <div id="question-inputs">
-        <input
-          onClick={(e) => getAnswer(e)}
-          type="radio"
-          className="question-input"
-          id="q1"
-          name="q1"
-          value={data.answers[0].isAnswerCorrect}
-        />
-        <label htmlFor="q1">{data.answers[0].text}</label>
-      </div>
-      <div id="question-inputs">
-        <input
-          onClick={(e) => getAnswer(e)}
-          type="radio"
-          className="question-input"
-          id="q2"
-          name="q1"
-          value={data.answers[1].isAnswerCorrect}
-        />
-        <label htmlFor="q2">{data.answers[1].text}</label>
-      </div>
-      <div id="question-inputs">
-        <input
-          onClick={(e) => getAnswer(e)}
-          type="radio"
-          className="question-input"
-          id="q3"
-          name="q1"
-          value={data.answers[2].isAnswerCorrect}
-        />
-        <label htmlFor="q3">{data.answers[2].text}</label>
-      </div>
-      <div id="answer-list">
-        {data.description}
-      </div>
+      <div className="question-block">
+        <div className="container">
+          <div>Ошибки: {errors}/2</div>
+          <div className="question-block-header">Вопрос {data.id} из {totalQuestionsNumber}</div>
+          <h2 className="question-block-title">
+            <span className="question-block-number">{data.id}.</span>
+            {data.text}
+          </h2>
+          <div className="question-block-image">
+            <img className="image-block" src={data.image} alt="image-test"/>
+          </div>
 
+          {data.answers.map((answer, idx) => (
+            <div key={idx} className={`question-inputs ${isShowDescription ? 'disabled' : ''}`}>
+              <input
+                onClick={() => setCurrentAnswer(answer.answer)}
+                type="radio"
+                className="question-input"
+                id={idx}
+                name="q1"
+                disabled={isShowDescription}
+              />
+              <label htmlFor={idx}>{answer.text}</label>
+            </div>
+          ))}
 
-      <div className="button-list">
-        <div>
-          <input type="button" value={data.status} onClick={getReset}/>
+          {isShowDescription && (
+            <div id="answer-list">
+              {data.description}
+            </div>
+          )}
+
+          <div className="question-line"></div>
+          <div className="question-btn-wrap">
+            {
+              (activeQuestionNumber === totalQuestionsNumber) && isShowDescription ? (
+                <input
+                  className="question-btn-next"
+                  type="button"
+                  value='Завершить тест'
+                  onClick={onFinishTest}
+                />
+              ) : (
+                <input
+                  className="question-btn-next"
+                  type="button"
+                  value={isShowDescription ? 'Следующий вопрос' : 'Ответить'}
+                  disabled={currentAnswer === null}
+                  onClick={isShowDescription ? onGoNextQuestion : () => onCheckAnswer(currentAnswer)}
+                />
+              )
+            }
+          </div>
         </div>
       </div>
     </div>

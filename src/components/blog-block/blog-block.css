@@ -28,7 +28,7 @@
 }
 
 .blog-img {
-    background: url(../../img/blog-img-1.png) center center/cover no-repeat;
+    /* background: url(../../img/blog-img-1.png) center center/cover no-repeat; */
     width: 406px;
     height: 230px;
 }

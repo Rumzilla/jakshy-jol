@@ -1,44 +1,66 @@
 import React from "react";
+import "./timer.css";
 
-const CountDown = ({minutes = 0, seconds = 5 }) => {
-  const [paused, setPaused] = React.useState(false);
-  const [over, setOver] = React.useState(false);
+const CountDown = (props) => {
+  const {
+    minutes = 20,
+    seconds = 0,
+    getTimerInfo,
+    isOver
+  } = props
+
+  const [over, setOver] = React.useState(isOver);
   const [[m, s], setTime] = React.useState([minutes, seconds]);
 
   const tick = () => {
-    if (paused || over) return;
 
-    if (m === 0 && s === 0) {
+    if ((m === 0 && s === 0) || isOver) {
       setOver(true);
     } else if (m === 0 && s === 0) {
       setTime([59, 59]);
-    } else if (s == 0) {
+    } else if (s === 0) {
       setTime([m - 1, 59]);
     } else {
       setTime([m, s - 1]);
     }
   };
 
-//   const reset = () => {
-//     setTime([parseInt(hours), parseInt(minutes), parseInt(seconds)]);
-//     setPaused(false);
-//     setOver(false);
-//   };
+  const getFinishTime = () => {
+    const min = minutes === 0 ? 0 : (minutes - 1) - m
+    const sec = (seconds !== 0 ? seconds : 60) - s
+    return (
+      `${min}:${sec}`
+    )
+  };
 
   React.useEffect(() => {
     const timerID = setInterval(() => tick(), 1000);
-    return () => clearInterval(timerID);
-  });
+    if (over) {
+      getTimerInfo({
+        isOver: over,
+        finishTime: getFinishTime()
+      })
+      return clearInterval(timerID)
+    }
+
+    return () => {
+      return clearInterval(timerID)
+    };
+  }, [m,s, over, isOver]);
 
   return (
-    <div>
-      <p>{`
-      ${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}
-      `}
-      </p>
-      <div>{over ? "Время вышло" : ''}</div>
+    <div className="timer-block">
+      <div className="container">
+        <div className="timer-block-wrap">
+          <p className="timer-block-time">
+          {`
+            ${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}
+            `}
+            </p>
+          </div>
+      </div>
     </div>
   );
 };
 
-export default CountDown
+export default CountDown;

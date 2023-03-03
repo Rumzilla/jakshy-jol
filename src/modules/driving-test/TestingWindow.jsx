@@ -1,81 +1,97 @@
-import React, {useState} from 'react';
-import {questionStore} from "../../MOCK_DATA/QuestionStore";
+import React, {useEffect, useState} from 'react';
 import QuestionItem from "./questions/QuestionItem";
-import ResultPage from "../../pages/ResultPage/ResultPage";
+import './TestingWindow.css';
+import CircularIndeterminate from "../../components/loader";
 
-const DrivingTestModule = () => {
+const DrivingTestModule = (props) => {
 
-  const [answer, setAnswer] = useState(0)
-  const [flag, setFlag] = useState(0)
-  const [result, setResult] = useState(0)
-  const [isShowResult, setIsShowResult] = useState(false)
   const [activeQuestionNumber, setActiveQuestionNumber] = useState(1)
-  const [currentMistakesNumber, setCurrentMistakesNumber] = useState(0)
+  const [question, setQuestion] = useState([])
+  const [isLoading, setIsLoading] = useState(false)
+  const [isShowDescription, setIsShowDescription] = useState(false)
+  const [errors, setErrors] = useState(0)
+  const [correctAnswers, setCorrectAnswers] = useState(0)
 
-  const getReset = () => {
-    setActiveQuestionNumber(prev => prev + 1)
-    setAnswer(0)
-    setFlag(0)
-    setResult(result + answer)
+  const getQuestions = async () => {
+    const response = await fetch('http://127.0.0.1:8000/api/question/');
+    return await response.json();
+  };
 
-  }
-
-  const getResult = () => {
-    setAnswer(0)
-    setFlag(0)
-    setResult(0)
-  }
-
-  const getAnswer = (event) => {
-    if (event.target.value === true) {
-      if (flag === 0) {
-        setAnswer(answer + 1)
-        setFlag(flag + 1)
-      } else {
-        setAnswer(answer)
+  useEffect(() => {
+    (async () => {
+      setIsLoading(true)
+      try {
+        const data  = await getQuestions()
+        setQuestion(data)
+      } catch (e) {
+        console.log(e, 'error')
+      } finally {
+        setIsLoading(false)
       }
-    } else {
-      if (flag !== 0) {
-        setCurrentMistakesNumber(currentMistakesNumber => currentMistakesNumber + 1)
-        setAnswer(answer - 1)
-        setFlag(flag - 1)
-      } else {
-        setAnswer(answer)
-      }
+    })()
+  }, []);
+
+
+  // Эта функция для кнопки "Отправить".
+  const handleGoNextQuestion = () => {
+    props.onChangeTest({
+      errors,
+      correctAnswers,
+      totalQuestionsNumbers: question.length
+    })
+    if (errors > 2) {
+      props.onFinishTest({
+        errors,
+        correctAnswers,
+        totalQuestionsNumbers: question.length
+      })
+      return
     }
+    setActiveQuestionNumber(prev => prev + 1)
+    setIsShowDescription(false)
   }
 
+  const handleCheckAnswer = (answer) => {
+    if (!answer) {
+      setErrors(prev => prev + 1)
+    } else {
+      setCorrectAnswers(prev => prev + 1)
+    }
+    setIsShowDescription(true)
+  }
 
-
-  const renderQuestions = () => {
-    return questionStore.questions.map((elem, idx) => {
-      if (activeQuestionNumber !== elem.questionNumber) {
-        return
-      }
-      return (
-        <QuestionItem
-          totalQuestionsNumber={questionStore.questions.length}
-          key={`question_${idx}`}
-          data={elem}
-          getReset={getReset}
-          getAnswer={getAnswer}
-        />
-      )
+  const handleFinishTest = () => {
+    props.onFinishTest({
+      errors,
+      correctAnswers,
+      totalQuestionsNumbers: question.length
     })
   }
 
+  if (isLoading) {
+    return <CircularIndeterminate />
+  }
 
   return (
     <div>
-      <h1>Пробный тест ПДД</h1>
-      {isShowResult ? (
-        <ResultPage
-          getResult={getResult}
-          result={result}
-          totalQuestionsNumber={questionStore.questions.length}
-        />
-      ) : renderQuestions()}
-
+      {question.map((elem, idx) => {
+        if (activeQuestionNumber !== elem.id) {
+          return
+        }
+        return (
+          <QuestionItem
+            key={`question_${idx}`}
+            totalQuestionsNumber={question.length}
+            data={elem}
+            onGoNextQuestion={handleGoNextQuestion}
+            activeQuestionNumber={activeQuestionNumber}
+            isShowDescription={isShowDescription}
+            onCheckAnswer={handleCheckAnswer}
+            errors={errors}
+            onFinishTest={handleFinishTest}
+          />
+        )
+      })}
     </div>
   );
 };
