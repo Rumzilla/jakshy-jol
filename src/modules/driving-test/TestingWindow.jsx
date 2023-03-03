@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import QuestionItem from "./questions/QuestionItem";
-import './TestingWindow.css';
 import CircularIndeterminate from "../../components/loader";
+import './TestingWindow.css';
 
 const DrivingTestModule = (props) => {
 
@@ -11,6 +11,8 @@ const DrivingTestModule = (props) => {
   const [isShowDescription, setIsShowDescription] = useState(false)
   const [errors, setErrors] = useState(0)
   const [correctAnswers, setCorrectAnswers] = useState(0)
+  const [showAnswer, setShowAnswer] = useState('')
+  const [answerColor, setAnswerColor] = useState('')
 
   const getQuestions = async () => {
     const response = await fetch('http://43.207.186.205/api/question/');
@@ -24,7 +26,7 @@ const DrivingTestModule = (props) => {
         const data  = await getQuestions()
         setQuestion(data)
       } catch (e) {
-        console.log(e, 'error')
+         alert('Сервер недоступен или отключен')
       } finally {
         setIsLoading(false)
       }
@@ -49,13 +51,19 @@ const DrivingTestModule = (props) => {
     }
     setActiveQuestionNumber(prev => prev + 1)
     setIsShowDescription(false)
+    setAnswerColor('')
+    setShowAnswer('')
   }
 
   const handleCheckAnswer = (answer) => {
     if (!answer) {
       setErrors(prev => prev + 1)
+      setShowAnswer('Ответ неверный')
+      setAnswerColor('#BB1919')
     } else {
       setCorrectAnswers(prev => prev + 1)
+      setShowAnswer('Ответ верный')
+      setAnswerColor('#11AE04')
     }
     setIsShowDescription(true)
   }
@@ -71,11 +79,10 @@ const DrivingTestModule = (props) => {
   if (isLoading) {
     return <CircularIndeterminate />
   }
-
   return (
     <div>
       {question.map((elem, idx) => {
-        if (activeQuestionNumber !== elem.id) {
+        if (activeQuestionNumber !== elem.questionNamber) {
           return
         }
         return (
@@ -89,6 +96,8 @@ const DrivingTestModule = (props) => {
             onCheckAnswer={handleCheckAnswer}
             errors={errors}
             onFinishTest={handleFinishTest}
+            showAnswer={showAnswer}
+            answerColor={answerColor}
           />
         )
       })}

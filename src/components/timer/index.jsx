@@ -57,6 +57,7 @@ const CountDown = (props) => {
             ${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}
             `}
             </p>
+          <span><a className="link-to-home-page" href="/">На главную</a></span>
           </div>
       </div>
     </div>

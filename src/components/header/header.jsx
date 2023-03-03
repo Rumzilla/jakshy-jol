@@ -5,7 +5,7 @@ import "./header.css"
 
 const Header = () => {
 
-    const {t, i18n} = useTranslation();
+    const {i18n} = useTranslation();
 
     const changeLanguage = (language) => {
         i18n.changeLanguage(language);
@@ -24,8 +24,8 @@ const Header = () => {
                     <a href="/" className="telegram-item"></a>
                     <Link to="/" className="lang">
                         <div className="lang-menu">
-                            <button onClick={() => changeLanguage('kg')} to="/" className="lang-menu-item">Кыргызский</button>
-                            <button onClick={() => changeLanguage('ru')} to="/" className="lang-menu-item">Русский</button>
+                            <button onClick={() => changeLanguage('kg')} className="lang-menu-item">Кыргызский</button>
+                            <button onClick={() => changeLanguage('ru')} className="lang-menu-item">Русский</button>
                         </div>
                     </Link>
 
