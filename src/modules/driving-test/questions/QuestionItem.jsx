@@ -11,11 +11,11 @@ const QuestionItem = (props) => {
     isShowDescription,
     errors,
     onFinishTest,
-    showAnswer
+    showAnswer,
+    answerColor
   } = props
 
   const [currentAnswer, setCurrentAnswer] = useState(null)
-
   return (
     <div>
       <div className='testing-window-block'>
@@ -51,10 +51,10 @@ const QuestionItem = (props) => {
               {data.description}
             </div>
           )}
-          <div className="question-line"></div>
-          <div>
+          <div className='check-answer' style={{ backgroundColor: answerColor }}>
             {isShowDescription ? showAnswer : ''}
           </div>
+          <div className="question-line"></div>
           <div className="question-btn-wrap">
             {
               (activeQuestionNumber === totalQuestionsNumber) && isShowDescription ? (

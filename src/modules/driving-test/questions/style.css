@@ -8,17 +8,19 @@
     font-size: 15px;
     line-height: 25px;
     color: #FFFFFF;
+    padding-top: 10px;
 }
 
 .errors-count-text {
     font-weight: 500;
     font-size: 15px;
     line-height: 25px;
-    color: red;
+    color: #BB1919;
+    padding-top: 10px;
 }
 
 .question-block-title {
-    padding: 50px 0 25px;
+    padding: 20px 0 25px;
     display: flex;
     font-weight: 500;
     font-size: 22px;
@@ -79,7 +81,15 @@
     font-size: 22px;
     line-height: 30px;
     color: #FFFFFF;
-    margin-bottom: 300px;
+    margin-bottom: 28px;
+}
+
+.check-answer {
+    align-items: center;
+    padding: 20px 50px;
+    border-radius: 30px;
+    width: max-content;
+    margin: 0 auto 30px;
 }
 
 .question-line {

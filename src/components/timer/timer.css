@@ -22,3 +22,14 @@
     line-height: 25px;
     color: #FFFFFF;
 }
+
+.link-to-home-page {
+    color: white;
+    font-size: 15px;
+    border-radius: 30px;
+    padding: 10px;
+}
+
+.link-to-home-page:hover {
+    background: gray;
+}

@@ -12,6 +12,7 @@ const DrivingTestModule = (props) => {
   const [errors, setErrors] = useState(0)
   const [correctAnswers, setCorrectAnswers] = useState(0)
   const [showAnswer, setShowAnswer] = useState('')
+  const [answerColor, setAnswerColor] = useState('')
 
   const getQuestions = async () => {
     const response = await fetch('http://43.207.186.205/api/question/');
@@ -50,15 +51,19 @@ const DrivingTestModule = (props) => {
     }
     setActiveQuestionNumber(prev => prev + 1)
     setIsShowDescription(false)
+    setAnswerColor('')
+    setShowAnswer('')
   }
 
   const handleCheckAnswer = (answer) => {
     if (!answer) {
       setErrors(prev => prev + 1)
       setShowAnswer('Ответ неверный')
+      setAnswerColor('#BB1919')
     } else {
       setCorrectAnswers(prev => prev + 1)
       setShowAnswer('Ответ верный')
+      setAnswerColor('#11AE04')
     }
     setIsShowDescription(true)
   }
@@ -92,6 +97,7 @@ const DrivingTestModule = (props) => {
             errors={errors}
             onFinishTest={handleFinishTest}
             showAnswer={showAnswer}
+            answerColor={answerColor}
           />
         )
       })}
