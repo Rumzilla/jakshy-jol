@@ -17,7 +17,7 @@ const SaleBlock = () => {
                         <p className="sale-info-text">{t("info-text")}</p>
                         <p className="sale-info-text">{t("info-text2")}</p>
                         <p className="sale-info-address">
-                        {t("info-adress")} <u>Сухе Ботора 26/1</u> {t("info-call")} <u>0552 209 809</u>
+                        {t("info-adress")} <u>Сухе Батора 26/1</u> {t("info-call")} <u>0552 209 809</u>
                         </p>
                     </div>
                 </div>
