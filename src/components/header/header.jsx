@@ -28,7 +28,7 @@ const Header = () => {
                             <button onClick={() => changeLanguage('ru')} className="lang-menu-item">Русский</button>
                         </div>
                     </Link>
-                    <a href='http://43.207.186.205/admin/' className="admin"></a>
+                    <a href='http://43.207.186.205:80/admin/' className="admin"></a>
                 </div>
             </div>
 
