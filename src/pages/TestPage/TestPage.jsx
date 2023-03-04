@@ -11,7 +11,7 @@ const TestPage = () => {
   const [resultInfo, setResultInfo] = useState({
     errors: 0,
     correctAnswers: 0,
-    totalQuestionsNumbers: 0
+    totalQuestionsNumbers: 0,
   })
 
   const [isFinishedTest, setIsFinishedTest] = useState(false)
@@ -35,7 +35,7 @@ const TestPage = () => {
     setResultInfo({
       errors: 0,
       correctAnswers: 0,
-      totalQuestionsNumbers: 0
+      totalQuestionsNumbers: 0,
     })
   }
 
@@ -52,7 +52,7 @@ const TestPage = () => {
         />
       ) : (
         <>
-          <CountDown isOver={isFinishedTest} getTimerInfo={handleGetTimerInfo}/>
+          <CountDown isOver={isFinishedTest} getTimerInfo={handleGetTimerInfo} resultInfo={resultInfo}/>
           <DrivingTestModule onChangeTest={handleChangeTest} onFinishTest={handleFinishTest}/>
         </>
         )}

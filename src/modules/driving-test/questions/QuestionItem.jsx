@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import './style.css'
 
 const QuestionItem = (props) => {
@@ -9,7 +9,6 @@ const QuestionItem = (props) => {
     totalQuestionsNumber,
     activeQuestionNumber,
     isShowDescription,
-    errors,
     onFinishTest,
     showAnswer,
     answerColor
@@ -23,7 +22,6 @@ const QuestionItem = (props) => {
       <div className="question-block">
         <div className="container">
           <div className="question-block-header">Вопрос {data.id} из {totalQuestionsNumber}</div>
-          <div className='errors-count-text'>Ошибки: {errors}/2</div>
           <h2 className="question-block-title">
             <span className="question-block-number">{data.questionNamber}.</span>
             {data.text}

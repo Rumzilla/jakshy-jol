@@ -6,7 +6,8 @@ const CountDown = (props) => {
     minutes = 20,
     seconds = 0,
     getTimerInfo,
-    isOver
+    isOver,
+    resultInfo
   } = props
 
   const [over, setOver] = React.useState(isOver);
@@ -52,12 +53,15 @@ const CountDown = (props) => {
     <div className="timer-block">
       <div className="container">
         <div className="timer-block-wrap">
-          <p className="timer-block-time">
-          {`
+          <span><a className="link-to-home-page" href="/">На главную</a></span>
+          <div className="time-error-block">
+            <span className='error-list'>Ошибки: {resultInfo.errors}/2</span>
+            <p className="timer-block-time">Время:
+              {`
             ${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}
             `}
             </p>
-          <span><a className="link-to-home-page" href="/">На главную</a></span>
+          </div>
           </div>
       </div>
     </div>

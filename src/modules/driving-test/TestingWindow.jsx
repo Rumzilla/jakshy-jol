@@ -39,7 +39,7 @@ const DrivingTestModule = (props) => {
     props.onChangeTest({
       errors,
       correctAnswers,
-      totalQuestionsNumbers: question.length
+      totalQuestionsNumbers: question.length,
     })
     if (errors > 2) {
       props.onFinishTest({
@@ -94,7 +94,6 @@ const DrivingTestModule = (props) => {
             activeQuestionNumber={activeQuestionNumber}
             isShowDescription={isShowDescription}
             onCheckAnswer={handleCheckAnswer}
-            errors={errors}
             onFinishTest={handleFinishTest}
             showAnswer={showAnswer}
             answerColor={answerColor}

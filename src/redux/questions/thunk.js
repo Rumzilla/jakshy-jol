@@ -9,7 +9,6 @@ const fetchBlog = () => async (dispatch) => {
     try {
         const req = await fetch ('https://ak-jol.herokuapp.com/api/blog')
         const parsedData = await req.json()
-        console.log(parsedData)
             dispatch(getBlogReceivePostsActionCreator(parsedData))
     } catch (e) {
         dispatch(getBlogFailurePostsActionCreator)

@@ -17,12 +17,10 @@ const BlogBlock = () => {
   useEffect(() => {
     dispatch(postOperations.fetchBlog())
   }, [])
-  console.log(Blog)
 
     //====END REDUX====
 
     return ( Blog.map((elem, idx) => {
-        console.log(elem)
         return (
             <div className="container" key={idx}>
                 <div className="blog-block">
