@@ -31,7 +31,7 @@ const BlogBlock = () => {
                             <h3>{elem.title}</h3>
                             {elem.text}
                         </div>
-                        <img src={elem.blog_image}></img>
+                        <img className='blog-img' src={elem.blog_image}></img>
                     </div>
                 </div>
             </div>

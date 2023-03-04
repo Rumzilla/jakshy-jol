@@ -33,3 +33,23 @@
 .link-to-home-page:hover {
     background: gray;
 }
+
+@media (max-width: 1024px) {
+    .timer-block-wrap {
+        padding: 0px;
+    }
+    
+    .link-to-home-page {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 25px;
+        color: #FFFFFF;
+    }
+
+    .timer-block-time {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 25px;
+        color: #FFFFFF;
+    }
+}

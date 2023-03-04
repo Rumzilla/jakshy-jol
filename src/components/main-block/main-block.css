@@ -195,3 +195,78 @@
     height: 16px;
     margin-right: 12px;
 }
+
+
+
+@media (max-width: 1024px) {
+    .main-block-background {
+        background: #488F65;
+    }
+
+    .main-block-car-bg {
+        display: none;
+    }
+
+    .main-block-header {
+        margin-top: 10px;
+        max-width: 260px;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 29px;
+        color: #FFFFFF;
+    }
+
+    .main-block-subheader {
+        font-size: 15px;
+        line-height: 25px; 
+        color: #FFFFFF;
+    }
+
+    .main-block-consultation {
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 25px;
+        color: #FFFFFF;
+    }
+
+    .main-block-whatsapp {
+        border: 1px solid white;
+    }
+
+    .main-block-work-time-graph {
+        font-weight: 400;
+        font-size: 8px;
+        line-height: 10px;
+        color: #FFFFFF;
+    }
+
+    .main-block-work-time-graph-icon {
+        background: url(../../icons/graph-white.svg) center center/cover no-repeat;
+        width: 11px;
+        height: 12px;
+    }
+
+    .main-block-work-time-text {
+        font-weight: 400;
+        font-size: 8px;
+        line-height: 10px;
+        color: #FFFFFF;
+    }
+
+    .main-block-gmail-icon {
+        width: 12px;
+        height: 10px;
+    }
+
+    .main-block-gmail {
+        font-weight: 400;
+        font-size: 8px;
+        line-height: 10px;
+        color: #F1F1F1;
+    }
+
+    .main-block-footer {
+        margin-top: 50px ;
+        padding-bottom: 17px;
+    }
+}

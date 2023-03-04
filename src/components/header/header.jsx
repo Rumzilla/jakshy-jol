@@ -28,9 +28,21 @@ const Header = () => {
                             <button onClick={() => changeLanguage('ru')} className="lang-menu-item">Русский</button>
                         </div>
                     </Link>
+                    <a href='http://43.207.186.205/admin/' className="admin"></a>
+                </div>
+            </div>
 
-                    <a href='https://ak-jol.herokuapp.com/admin' className="admin"></a>
-                </div>              
+            <div className="header-block-mobile">
+                <Link to ='/' className="logo-block-mobile">
+                    <span className="logo-mobile"></span>
+                    <span className="logo-text-mobile"></span>
+                </Link>
+                <Link to="/" className="lang-mobile">
+                    <div className="lang-menu">
+                        <button onClick={() => changeLanguage('kg')} className="lang-menu-item">Кыргызский</button>
+                        <button onClick={() => changeLanguage('ru')} className="lang-menu-item">Русский</button>
+                    </div>
+                </Link>
             </div>
         </div>
     )

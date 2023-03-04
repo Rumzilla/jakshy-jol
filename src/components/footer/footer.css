@@ -71,3 +71,27 @@
     line-height: 15px;
     color: #FFFFFF;
 }
+
+@media (max-width: 1024px) {
+    .nav-block {
+        height: 40px;
+    }
+    .instagram-item {
+        margin-right: 15px;
+    }
+    
+    .whatsapp-item {
+        margin-right: 15px;
+    }
+
+    .first-phone {
+        font-weight: 400;
+        font-size: 8px;
+        line-height: 10px;
+        color: #FFFFFF;
+    }
+
+    .second-phone {
+        display: none;
+    }
+}

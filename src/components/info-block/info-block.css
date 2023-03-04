@@ -112,7 +112,7 @@
 }
 
 .about-info-block {
-    width: 800px;
+    max-width: 800px;
 }
 
 .about-info-name {
@@ -137,4 +137,90 @@
     font-size: 20px;
     line-height: 30px;
     color: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 1024px) {
+    .container {
+        padding: 16px;
+    }
+
+    .card-block {
+        padding-top: 30px;
+    }
+
+    .card-bg {
+        width: 70px;
+        height: 70px;
+    }
+
+    .work-logo {
+        width: 62px;
+        height: 25px;
+    }
+
+    .driver-logo {
+        width: 37px;
+        height: 40px;
+    }
+
+    .time-logo {
+        width: 36px;
+        height: 37px;
+    }
+
+    .client-logo {
+        width: 56px;
+        height: 35px;
+    }
+
+    .card-text {
+        font-weight: 500;
+        font-size: 7px;
+        line-height: 10px;
+        text-align: center;
+        color: #000000;
+    }
+
+    .line {
+        margin: 30px auto;
+        width: 220px;
+    }
+
+    .about-block {
+        margin-bottom: 30px;
+    }
+
+    .photo {
+        width: 170px;
+        height: 200px;
+    }
+
+    .about-info-block {
+        max-width: 177px;
+    }
+
+    .about-info-name {
+        margin-top: 0;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 20px;
+        color: #000000;
+    }
+
+    .about-info-experience {
+        margin-top: 0;
+        font-weight: 500;
+        font-size: 9px;
+        line-height: 20px;
+        color: #000000;
+    }
+
+    .about-info-text {
+        margin-top: 0;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        
+    }
 }
