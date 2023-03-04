@@ -29,7 +29,7 @@ const Header = () => {
                         </div>
                     </Link>
 
-                    <a href='http://43.207.186.205/admin/' className="admin"></a>
+                    <a href='https://ak-jol.herokuapp.com/admin' className="admin"></a>
                 </div>              
             </div>
         </div>
