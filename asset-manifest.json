@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/jakshy-jol/static/css/main.a3bd0ac4.css",
-    "main.js": "/jakshy-jol/static/js/main.347cba5f.js",
+    "main.css": "/jakshy-jol/static/css/main.5fd40249.css",
+    "main.js": "/jakshy-jol/static/js/main.86c6eb2e.js",
     "static/js/787.4f03cdc3.chunk.js": "/jakshy-jol/static/js/787.4f03cdc3.chunk.js",
     "static/media/book-img.png": "/jakshy-jol/static/media/book-img.2bb27d12693d24a6fa8d.png",
     "static/media/Photo.png": "/jakshy-jol/static/media/Photo.f221632d779d617d7071.png",
@@ -15,30 +15,37 @@
     "static/media/Ellipse.png": "/jakshy-jol/static/media/Ellipse.edb56ed579e5696aab61.png",
     "static/media/logo-header.svg": "/jakshy-jol/static/media/logo-header.116d55d82a3b58395455.svg",
     "static/media/logo-footer.svg": "/jakshy-jol/static/media/logo-footer.58866f251ad40a02957f.svg",
+    "static/media/Logo-white.svg": "/jakshy-jol/static/media/Logo-white.5ae62592f2146eea3de3.svg",
     "static/media/instagram-black.svg": "/jakshy-jol/static/media/instagram-black.d33759cf43292fef1e98.svg",
     "static/media/instagram-white.svg": "/jakshy-jol/static/media/instagram-white.6b6beafe27c0a0385ddd.svg",
     "static/media/language.svg": "/jakshy-jol/static/media/language.c0608a3275b9df9423b0.svg",
     "static/media/whatsapp-black.svg": "/jakshy-jol/static/media/whatsapp-black.9a5c382e1f374e4a6a8e.svg",
     "static/media/whatsapp-white.svg": "/jakshy-jol/static/media/whatsapp-white.3baa1c8ca0d345e677e3.svg",
     "static/media/whatsapp-icon.svg": "/jakshy-jol/static/media/whatsapp-icon.5c57d3d817ee20927690.svg",
+    "static/media/failed-smile-for-result.svg": "/jakshy-jol/static/media/failed-smile-for-result.2de7f13b2a102547a71d.svg",
     "static/media/work-logo.svg": "/jakshy-jol/static/media/work-logo.5ae9234849c5d5669966.svg",
     "static/media/Logo.svg": "/jakshy-jol/static/media/Logo.c7f9a9d469b1eb8b8bc3.svg",
     "static/media/admin_panel_settings.svg": "/jakshy-jol/static/media/admin_panel_settings.a0684032d43eedadba2b.svg",
+    "static/media/logo-header-white.svg": "/jakshy-jol/static/media/logo-header-white.d3af7a6898d47d3a27d2.svg",
+    "static/media/passed-smile-for-result.svg": "/jakshy-jol/static/media/passed-smile-for-result.98959842e9ebda027594.svg",
     "static/media/phone.svg": "/jakshy-jol/static/media/phone.6a47668e3a10cd4b1413.svg",
     "static/media/phone-icon.svg": "/jakshy-jol/static/media/phone-icon.479b8690fb764315d022.svg",
     "static/media/telegram-black.svg": "/jakshy-jol/static/media/telegram-black.9f754c758c799b4de325.svg",
     "static/media/telegram-white.svg": "/jakshy-jol/static/media/telegram-white.8e83c8b7d95e8ef4e5a7.svg",
+    "static/media/link-to-rapeat.svg": "/jakshy-jol/static/media/link-to-rapeat.6e805038b9f174510306.svg",
+    "static/media/graph-white.svg": "/jakshy-jol/static/media/graph-white.bca24e8d14b7b8b0447f.svg",
     "static/media/time-logo.svg": "/jakshy-jol/static/media/time-logo.5a8faeacf421196f019c.svg",
     "static/media/graph.svg": "/jakshy-jol/static/media/graph.146d1e6bb1887e08ca6d.svg",
     "static/media/mail.svg": "/jakshy-jol/static/media/mail.8d5087712b6fb682216b.svg",
     "index.html": "/jakshy-jol/index.html",
+    "static/media/link-to-home.svg": "/jakshy-jol/static/media/link-to-home.a7ef67dde04d37ec5ae3.svg",
     "static/media/getFetch.cjs": "/jakshy-jol/static/media/getFetch.40f37ddea2378391108f.cjs",
-    "main.a3bd0ac4.css.map": "/jakshy-jol/static/css/main.a3bd0ac4.css.map",
-    "main.347cba5f.js.map": "/jakshy-jol/static/js/main.347cba5f.js.map",
+    "main.5fd40249.css.map": "/jakshy-jol/static/css/main.5fd40249.css.map",
+    "main.86c6eb2e.js.map": "/jakshy-jol/static/js/main.86c6eb2e.js.map",
     "787.4f03cdc3.chunk.js.map": "/jakshy-jol/static/js/787.4f03cdc3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a3bd0ac4.css",
-    "static/js/main.347cba5f.js"
+    "static/css/main.5fd40249.css",
+    "static/js/main.86c6eb2e.js"
   ]
 }
