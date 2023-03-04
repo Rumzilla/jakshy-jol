@@ -198,7 +198,7 @@
 
 
 
-@media (max-width: 390px) {
+@media (max-width: 1024px) {
     .main-block-background {
         background: #488F65;
     }
@@ -263,5 +263,10 @@
         font-size: 8px;
         line-height: 10px;
         color: #F1F1F1;
+    }
+
+    .main-block-footer {
+        margin-top: 50px ;
+        padding-bottom: 17px;
     }
 }

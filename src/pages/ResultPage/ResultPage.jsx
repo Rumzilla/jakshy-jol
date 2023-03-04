@@ -22,7 +22,7 @@ const ResultPage = (props) => {
 
   const testPassed = () => {
     return (
-      <div className="result-wrapper">
+      <div className="result-wrapper-accept">
         <h1>ТЕСТ ПРОЙДЕН</h1>
         <h2 className="result-title">Результаты теста</h2>
         <p> Количество ошибок: {countError}/2</p>
@@ -41,7 +41,7 @@ const ResultPage = (props) => {
 
   const testFailed = () => {
     return (
-      <div className="result-wrapper">
+      <div className="result-wrapper-falied">
         <h1>ТЕСТ ПРОВАЛЕН</h1>
         <h2 className="result-title">Результаты теста</h2>
         <p> Количество ошибок: {countError}/2</p>
