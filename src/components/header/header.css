@@ -79,7 +79,6 @@
 .lang:hover .lang-menu {
     display: block;
     background: #F0EAD2;
-
 }
 
 .lang-menu-item:hover .lang-menu {
@@ -145,7 +144,16 @@
         left: -75px;
     }
 
-    .lang {
+    .lang-mobile {
+        background: url(../../icons/language.svg) center center/cover no-repeat;
+        width: 20px;
+        height: 20px;
+        margin-right: 21px;
+        position: relative;
+    }
+
+    .lang-mobile:hover .lang-menu {
         display: block;
+        background: #F0EAD2;
     }
 }

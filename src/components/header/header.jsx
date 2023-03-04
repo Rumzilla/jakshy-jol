@@ -37,7 +37,7 @@ const Header = () => {
                     <span className="logo-mobile"></span>
                     <span className="logo-text-mobile"></span>
                 </Link>
-                <Link to="/" className="lang">
+                <Link to="/" className="lang-mobile">
                     <div className="lang-menu">
                         <button onClick={() => changeLanguage('kg')} className="lang-menu-item">Кыргызский</button>
                         <button onClick={() => changeLanguage('ru')} className="lang-menu-item">Русский</button>
