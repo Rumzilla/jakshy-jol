@@ -5,7 +5,7 @@ import './TestingWindow.css';
 
 const DrivingTestModule = (props) => {
 
-  const [activeQuestionNumber, setActiveQuestionNumber] = useState(1)
+  const [activeQuestionNumber, setActiveQuestionNumber] = useState(20)
   const [question, setQuestion] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [isShowDescription, setIsShowDescription] = useState(false)
