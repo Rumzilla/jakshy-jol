@@ -5,7 +5,7 @@ import './TestingWindow.css';
 
 const DrivingTestModule = (props) => {
 
-  const [activeQuestionNumber, setActiveQuestionNumber] = useState(20)
+  const [activeQuestionNumber, setActiveQuestionNumber] = useState(1)
   const [question, setQuestion] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [isShowDescription, setIsShowDescription] = useState(false)
@@ -39,7 +39,7 @@ const DrivingTestModule = (props) => {
     props.onChangeTest({
       errors,
       correctAnswers,
-      totalQuestionsNumbers: question.length
+      totalQuestionsNumbers: question.length,
     })
     if (errors > 2) {
       props.onFinishTest({
@@ -94,7 +94,6 @@ const DrivingTestModule = (props) => {
             activeQuestionNumber={activeQuestionNumber}
             isShowDescription={isShowDescription}
             onCheckAnswer={handleCheckAnswer}
-            errors={errors}
             onFinishTest={handleFinishTest}
             showAnswer={showAnswer}
             answerColor={answerColor}

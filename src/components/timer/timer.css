@@ -33,3 +33,15 @@
 .link-to-home-page:hover {
     background: gray;
 }
+
+.error-list {
+    font-size: 15px;
+    line-height: 25px;
+    color: #BB1919;
+    margin-right: 53px;
+}
+
+.time-error-block {
+    display: flex;
+    align-items: center;
+}

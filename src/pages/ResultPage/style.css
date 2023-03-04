@@ -101,7 +101,7 @@
 }
 
 
-@media (max-width: 390px) {
+@media (max-width: 1024px) {
     .smile-block {
         width: 42px;
         height: 42px;
