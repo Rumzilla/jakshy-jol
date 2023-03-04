@@ -7,7 +7,7 @@ import {
 const fetchBlog = () => async (dispatch) => {
     dispatch(getBlogRequestPostsActionCreator())
     try {
-        const req = await fetch ('https://ak-jol.herokuapp.com/api/blog')
+        const req = await fetch ('http://43.207.186.205:80/api/blog')
         const parsedData = await req.json()
             dispatch(getBlogReceivePostsActionCreator(parsedData))
     } catch (e) {

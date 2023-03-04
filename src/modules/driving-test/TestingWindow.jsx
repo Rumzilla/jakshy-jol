@@ -15,7 +15,7 @@ const DrivingTestModule = (props) => {
   const [answerColor, setAnswerColor] = useState('')
 
   const getQuestions = async () => {
-    const response = await fetch('https://ak-jol.herokuapp.com/api/question');
+    const response = await fetch('http://43.207.186.205:80/api/question');
     return await response.json();
   };
 
