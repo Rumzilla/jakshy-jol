@@ -33,6 +33,17 @@
 .link-to-home-page:hover {
     background: gray;
 }
+.time-error-block {
+    display: flex;
+    align-items: center;
+}
+
+.error-list {
+    font-size: 15px;
+    color: #BB1919;
+    line-height: 25px;
+    margin-right: 50px;
+}
 
 @media (max-width: 1024px) {
     .timer-block-wrap {
@@ -48,8 +59,13 @@
 
     .timer-block-time {
         font-weight: 500;
-        font-size: 12px;
+        font-size: 8px;
         line-height: 25px;
         color: #FFFFFF;
+    }
+
+    .error-list {
+        font-size: 8px;
+        margin-right: 10px;
     }
 }

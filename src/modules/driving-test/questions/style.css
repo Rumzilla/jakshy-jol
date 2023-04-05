@@ -1,6 +1,6 @@
 .question-block {
     background: #2A9D8F;
-    height: 92.5vh;
+    height: 100%;
 }
 
 .question-block-header {
@@ -90,6 +90,7 @@
     border-radius: 30px;
     width: max-content;
     margin: 0 auto 30px;
+    color: white;
 }
 
 .question-line {
@@ -187,5 +188,21 @@
         font-size: 12px;
         line-height: 20px;
         color: #FFFFFF;
+        padding: 10px 25px;
+
+    }
+
+    #answer-list {
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    .question-inputs label {
+        font-size: 12px;
+    }
+
+    .question-btn-next {
+        font-size: 12px;
+        line-height: 15px;
     }
 }
