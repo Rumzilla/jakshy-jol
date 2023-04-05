@@ -1,14 +1,19 @@
 .question-block {
-    background: #2A9D8F;
+    background: #478E64;
     height: 100%;
+    padding-bottom: 100px;
 }
 
-.question-block-header {
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 25px;
-    color: #FFFFFF;
-    padding-top: 10px;
+.container-for-test-window {
+    background: #F1F1F1;
+    margin: 0 100px;
+    border-radius: 50px;
+    padding: 60px;
+}
+
+.question-image-block {
+    display: flex;
+    justify-content: space-between;
 }
 
 .errors-count-text {
@@ -25,7 +30,9 @@
     font-weight: 500;
     font-size: 22px;
     line-height: 25px;
-    color: #FFFFFF;
+    color: #000000;
+    margin-right: 20px;
+    max-width: 370px;
 }
 
 .question-block-number {
@@ -33,14 +40,15 @@
 }
 
 .question-block-image {
-    max-width: 746px;
-    max-height: 270px;
+    max-width: 750px;
+    max-height: 250px;
     margin-bottom: 40px;
 }
 
 .image-block {
     width: 100%;
     height: 100%;
+    border-radius: 30px;
 }
 
 .question-inputs {
@@ -72,7 +80,7 @@
     font-weight: 500;
     font-size: 22px;
     line-height: 25px;
-    color: #FFFFFF;
+    color: black;
     width: 100%;
 }
 
@@ -80,7 +88,7 @@
     font-weight: 500;
     font-size: 22px;
     line-height: 30px;
-    color: #FFFFFF;
+    color: #000000;
     margin-bottom: 28px;
 }
 
@@ -93,10 +101,6 @@
     color: white;
 }
 
-.question-line {
-    border: 1px solid #94CEC7;
-}
-
 .question-btn-wrap {
     display: flex;
     justify-content: right;
@@ -107,7 +111,7 @@
     margin: 20px 0;
     text-align: right;
     padding: 10px 20px;
-    background: rgba(255, 255, 255, 0.3);
+    background: #B1B1B1;
     border-radius: 20px;
     font-weight: 500;
     font-size: 22px;
@@ -148,10 +152,27 @@
     .question-block {
         height: 100%;
     }
-    
+
+    .question-block-image {
+        max-width: 350px;
+        max-height: 250px;
+        margin: 0 auto;
+    }
+
+    .container-for-test-window {
+        background: #F1F1F1;
+        margin: 0 auto;
+        border-radius: 0;
+        padding: 0 16px;
+    }
+
+    .question-image-block {
+        display: block;
+    }
+
     .image-block {
-        max-width: 358px;
-        max-height: 130px;
+        width: 100%;
+        height: 100%;
     }
 
     .errors-count-text {
@@ -172,7 +193,8 @@
         font-weight: 400;
         font-size: 12px;
         line-height: 15px;
-        color: #FFFFFF;
+        color: black;
+        margin: 0 auto;
     }
 
     .question-inputs {

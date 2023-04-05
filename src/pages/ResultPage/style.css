@@ -7,7 +7,7 @@
 }
 
 .test-passed {
-    background: #2A9D8F;
+    background: #478E64;
 }
 
 .result-list {
@@ -61,6 +61,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    margin: 0 20px;
 }
 
 .repeat-button {
@@ -86,11 +87,28 @@
     background: url("../../icons/link-to-rapeat.svg") center center/cover no-repeat;
 }
 
+.icon-to-more-test {
+    width: 24px;
+    height: 24px;
+    background: url("../../icons/more-tests.svg") center center/cover no-repeat;
+}
+
 .result-button {
     color: #FFFFFF;
     font-size: 20px;
     font-weight: 600;
     cursor: pointer;
+}
+
+.link-to-more-tests {
+    color: #FFFFFF;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.more-tests-link {
+    background: #478E64;
 }
 
 .inputs-block-in-result {
@@ -133,7 +151,7 @@
     }
 
     .link-to-home-wrap {
-        width: 93px;
+        width: 85px;
         height: 23px;
         background: #2566B1;
         border-radius: 10px;
@@ -141,18 +159,28 @@
         display: flex;
         align-items: center;
         justify-content: space-around;
+        margin: 0 5px;
     }
 
     .repeat-button {
         background: #2A9D8F;
     }
 
-    .link-to-home {
+    .link-to-home{
         font-size: 12px;
         font-weight: 600;
     }
 
     .icon-to-home {
+        width: 11px;
+        height: 11px;
+    }
+
+    .link-to-more-tests {
+        font-size: 12px;
+    }
+
+    .icon-to-more-test {
         width: 11px;
         height: 11px;
     }

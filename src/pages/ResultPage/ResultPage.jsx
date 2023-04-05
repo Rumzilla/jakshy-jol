@@ -41,6 +41,10 @@ const ResultPage = (props) => {
               <div className='result-button' onClick={onResetTest}>Повторить</div>
               <i className='icon-to-repeat'></i>
             </div>
+            <div className="link-to-home-wrap more-tests-link">
+              <a className='link-to-more-tests' href="/">Больше тестов</a>
+              <i className="icon-to-more-test"></i>
+            </div>
           </div>
         </section>
       </div>
@@ -66,6 +70,10 @@ const ResultPage = (props) => {
             <div className='link-to-home-wrap repeat-button'>
               <div className='result-button' onClick={onResetTest}>Повторить</div>
               <i className='icon-to-repeat'></i>
+            </div>
+            <div className="link-to-home-wrap more-tests-link">
+              <a className='link-to-more-tests' href="/">Больше тестов</a>
+              <i className="icon-to-more-test"></i>
             </div>
           </div>
         </section>

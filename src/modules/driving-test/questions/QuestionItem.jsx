@@ -20,16 +20,16 @@ const QuestionItem = (props) => {
       <div className='testing-window-block'>
       </div>
       <div className="question-block">
-        <div className="container">
-          <div className="question-block-header">Вопрос {data.id} из {totalQuestionsNumber}</div>
-          <h2 className="question-block-title">
-            <span className="question-block-number">{data.questionNamber}.</span>
-            {data.text}
-          </h2>
-          <div className="question-block-image">
-            <img className="image-block" src={data.image} alt="image-test"/>
+        <div className="container-for-test-window">
+          <div className="question-image-block">
+            <h2 className="question-block-title">
+              <span className="question-block-number">{data.questionNamber}.</span>
+              {data.text}
+            </h2>
+            <div className="question-block-image">
+              <img className="image-block" src={data.image} alt="image-test"/>
+            </div>
           </div>
-
           {data.answers.map((answer, idx) => (
             <div key={idx} className={`question-inputs ${isShowDescription ? 'disabled' : ''}`}>
               <input
@@ -52,7 +52,6 @@ const QuestionItem = (props) => {
           <div className='check-answer' style={{ backgroundColor: answerColor }}>
             {isShowDescription ? showAnswer : ''}
           </div>
-          <div className="question-line"></div>
           <div className="question-btn-wrap">
             {
               (activeQuestionNumber === totalQuestionsNumber) && isShowDescription ? (
@@ -66,7 +65,7 @@ const QuestionItem = (props) => {
                 <input
                   className="question-btn-next"
                   type="button"
-                  value={isShowDescription ? 'Следующий вопрос' : 'Ответить'}
+                  value={isShowDescription ? 'Следующий' : 'Отправить'}
                   disabled={currentAnswer === null}
                   onClick={isShowDescription ? onGoNextQuestion : () => onCheckAnswer(currentAnswer)}
                 />
