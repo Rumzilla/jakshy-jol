@@ -9,20 +9,20 @@
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25);
 }
 
-.sale-block-beige {
-    background: #CCD5AE;
+.sale-block-white {
+    border-radius: 50px;
+    background: white;
     display: flex;
     justify-content: flex-end;
-    position: relative;
 }
 
 .book-img {
     background: url(../../img/book-img.png) center center/cover no-repeat;
-    width: 450px;
-    height: 585px;
-    position: absolute;
+    width: 400px;
+    height: 525px;
     top: 97px;
     left: 30px;
+    margin: 37px 88px 37px 37px;
 }
 
 .sale-block-info {
@@ -49,11 +49,45 @@
 
 .sale-info-address {
     max-width: 610px;
-    margin: 154px 0px 30px;
+    margin-top: 20px;
     font-weight: 500;
     font-size: 22px;
     line-height: 30px;
     color: #000000;
+}
+
+.location-icon {
+    display: inline-block;
+    background: url(../../icons/location-icon.svg) center center/cover no-repeat;
+    width: 30px;
+    height: 30px;
+}
+
+.button-wrap{
+    margin-top: 64px;
+    display: flex;
+    align-items: center;
+}
+
+.buy-button {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 30px;
+    color: #FFFFFF;
+    background: #11AE04;
+    border-radius: 30px;
+    padding: 10px 20px;
+    border: none;
+    margin-left: 165px;
+}
+
+.sale-info-buy {
+    max-width: 610px;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 30px;
+    color: #000000;
+    text-decoration-line: underline;
 }
 
 @media (max-width: 1024px) {

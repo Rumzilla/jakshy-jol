@@ -21,7 +21,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #F0EAD2;
+    background: white;
     box-shadow: 2px 3px 10px 2px rgba(0, 0, 0, 0.25);
     width: 200px;
     height: 200px;
@@ -34,8 +34,8 @@
 
 .client-logo {
     background: url(../../icons/clients-icon.svg) center center/cover no-repeat;
-    width: 150px;
-    height: 95px;
+    width: 100px;
+    height: 100px;
 }
 
 .card-bg:hover {
@@ -52,20 +52,20 @@
 
 .work-logo {
     background: url(../../icons/work-logo.svg) center center/cover no-repeat;
-    width: 150px;
+    width: 146px;
     height: 60px;
 }
 
 .driver-logo {
     background: url(../../icons/driver-logo.svg) center center/cover no-repeat;
-    width: 101px;
+    width: 110px;
     height: 109px;
 }
 
 .time-logo {
     background: url(../../icons/time-logo.svg) center center/cover no-repeat;
-    width: 100px;
-    height: 100px;
+    width: 110px;
+    height: 110px;
 }
 
 .card-text {
