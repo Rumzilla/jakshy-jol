@@ -130,4 +130,32 @@
         margin: 0;
         padding: 5px 0 12px;
     }
+
+    .location-icon {
+        width: 10px;
+        height: 10px;
+    }
+
+    .button-wrap {
+        margin-top: 5px;
+    }
+
+    .buy-button {
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 15px;
+        color: #FFFFFF;
+        background: #11AE04;
+        border-radius: 30px;
+        padding: 5px 10px;
+        border: none;
+        margin-left: 10px;
+    }
+
+    .sale-info-buy {
+        font-size: 10px;
+        line-height: 30px;
+        text-decoration-line: underline;
+        color: #000000;
+    }
 }

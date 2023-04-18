@@ -19,9 +19,10 @@ const Header = () => {
                     <span className="logo-text"></span>
                 </Link>
                 <div className="social-header-block">
-                    <a href="https://instagram.com/jakshyjol.kg?igshid=MjkzY2Y1YTY=" className="instagram-item"></a>
-                    <a href="https://wa.me/996705265747" className="whatsapp-item"></a>
-                    <a href="/" className="telegram-item"></a>
+                    <a href="about-me-block" className="nav-menu-link">Обо мне</a>
+                    <a href="" className="nav-menu-link">Методическое пособие</a>
+                    <a href="" className="nav-menu-link">Статьи</a>
+                    <a href="" className="nav-menu-link">Тест</a>
                     <Link to="/" className="lang">
                         <div className="lang-menu">
                             <button onClick={() => changeLanguage('kg')} className="lang-menu-item">Кыргызский</button>

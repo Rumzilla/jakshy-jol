@@ -7,6 +7,7 @@ const InfoBlock = () => {
     const {t} = useTranslation()
     return (
         <div className="container">
+            <p id="about-me-block"></p>
             <div className="card-block">
                 <div className="card-item">
                     <div className="card-bg">

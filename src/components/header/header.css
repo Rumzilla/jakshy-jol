@@ -107,6 +107,17 @@
     height: 20px;
 }
 
+.nav-menu-link {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    color: black;
+    margin-right: 40px;
+}
+
+.nav-menu-link:nth-last-child(3) {
+    margin-right: 227px;
+}
 
 
 
@@ -157,3 +168,4 @@
         background: #F0EAD2;
     }
 }
+
